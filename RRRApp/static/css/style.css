@@ -185,7 +185,8 @@ main{
     margin: auto;
     width: 100%;
     overflow-x: visible;
-    padding-bottom: 30px;
+    overflow-y: visible;
+    /* padding-bottom: 30px; */
 }
 
 .coverIMG {
@@ -354,6 +355,7 @@ main{
 .about{
     max-width: 90%;
     margin: 0 auto;
+    margin-bottom: 15px;
     text-align: center;
     overflow-x: visible;
     padding: 10px;
@@ -769,6 +771,15 @@ footer a{
 .linkedin-button {
     display: inline-block;
     position: relative;
+    fill: var(--font-color);
+}
+
+.linkedin-button:hover svg path{
+    fill: var(--background-color);
+}
+
+svg path{
+    transition: fill 0.2s ease;
 }
 /*---------------------ENDO OF TEAM || START OF SPONSOR---------------*/
 .coverIMGSponsor {
@@ -877,7 +888,7 @@ footer a{
     position: relative;
     overflow-y: hidden;
     display: flex; /* Use flexbox for side-by-side layout */
-    flex-direction: row;
+    
     @media (max-width: 768px) {
         flex-direction: column; /* Stack vertically on small screens */
         height: auto;
@@ -885,16 +896,47 @@ footer a{
     }
 }
 
+.contact{
+    flex-direction: row-reverse;
+}
+
+.blobContact{
+    top: 50px;
+    position: absolute; 
+    z-index: -1;
+    transform: rotateZ(45deg);
+    scale: 1.1;
+    animation: spin infinite 12s linear;
+}
+
+@keyframes spin {
+    0%{
+        transform: rotate(0deg);
+        scale: 1;
+    }
+    50%{
+        scale: 1.3;
+    }
+    100%{
+        transform: rotate(360deg);
+        scale: 1;
+    }
+}
+
+
+
 .contactTitle {
     text-align: center; 
     font-size: 70px;
     font-size: 55px;
+    color: var(--white);
 }
 
 .contactTitleCont {
     text-align: center; 
     font-size: 25px;
     margin-top: -30px;
+    color: var(--white);
 }
 
 .reach-out {
@@ -921,6 +963,12 @@ footer a{
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow-y: hidden;
+    flex-direction: row;
+    @media (max-width: 768px) {
+        flex-direction: column; /* Stack vertically on small screens */
+        height: auto;
+    }
 }
 
 form{
@@ -928,14 +976,14 @@ form{
     color: var(--font-color);
     font-size: 18px;
     width: 700px;
-    height: 400px;
+    height: 450px;
     margin-right: 20px;
     padding: 30px;
     border-radius: 20px;
     box-shadow: var(--shadow);
     border-style: solid;
     border-color: #222222;
-    border-width: 2px;
+    border-width: 3px;
     overflow: hidden;
 }
 
@@ -957,9 +1005,10 @@ form input, textarea{
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom: 1px solid black;
+    border-bottom: 3px solid black;
     outline: none;
     border-radius: 5px;
+    background-color: var(--white);
 }
 
 #input-field{
@@ -981,8 +1030,60 @@ form input, textarea{
 .send-btn{
     width: 100px;
     border: none;
-    background-color: white;
+    background-color: var(--white);
     color: black;
     padding: 6px 0;
     border-radius: 20px;
+}
+/*------------------JOIN-------------------*/
+.joinasf {
+    flex-direction: row;
+}
+
+.join{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.joinForm{
+    background-color: var(--background-color-about);
+    color: var(--font-color);
+    margin-top: 20px;
+    font-size: 18px;
+    width: 700px;
+    height: 515px;
+    margin-right: 20px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    border-style: solid;
+    border-color: #222222;
+    border-width: 2px;
+    overflow: hidden;
+}
+
+.joinIntro, .joinCont{
+    margin-top: -12px;
+    flex: 1;
+    height: 100%;
+    text-align: center;
+}
+
+.joinBelow{
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.joinInstruction{
+    font-size: 18px;
+    margin-top: 0px;
+}
+
+.submitBtn2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -15px;
 }

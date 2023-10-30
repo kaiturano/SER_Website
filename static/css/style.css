@@ -185,7 +185,7 @@ main{
     margin: auto;
     width: 100%;
     overflow-x: visible;
-    padding-bottom: 50px;
+    padding-bottom: 30px;
 }
 
 .coverIMG {
@@ -240,8 +240,6 @@ main{
 .welcomeTitle {
     text-align: left; /* Change to left alignment */
     font-size: 70px;
-    margin-top: 00px;
-    margin-bottom: 00px;
 }
 
 .welcomeTitleCont {
@@ -250,7 +248,7 @@ main{
     margin-top: -20px;
 }
 
-span{
+.auto-typed{
     color: var(--font-color);
     text-shadow: 0.75px 0.75px var(--dark-red);
 }
@@ -272,7 +270,7 @@ span{
     max-width: 80%;
     text-align: center;
     margin-top: 5px;
-    font-size: 17px;
+    font-size: 20px;
 }
 
 .welcomePics {
@@ -773,10 +771,12 @@ footer a{
     position: relative;
 }
 
-.linkedin-icon {
-    width: 28px; /* Adjust the width as needed */
-    height: 28px; /* Adjust the height as needed */
-    cursor: pointer;
+svg path:hover{
+    fill: var(--background-color);
+}
+
+svg path{
+    transition: fill 0.2s ease;
 }
 /*---------------------ENDO OF TEAM || START OF SPONSOR---------------*/
 .coverIMGSponsor {
@@ -821,16 +821,12 @@ footer a{
 
 .sponsorTitle {
     text-align: center; 
-    /* margin-left: 92px; 
-    margin-top: 70px; */
     font-size: 70px;
     margin-bottom: 10px;
 }
 
 .sponsorTitleCont {
     text-align: center; 
-    /* margin-left: 95px; 
-    margin-bottom: 30px; */
     font-size: 30px;
     margin-top: -30px;
 }
@@ -882,6 +878,119 @@ footer a{
     height: 100%;
 }
 
-
-
 /*---------------------------------CONTACT US----------------------*/
+.coverIMGContact {
+    width: 100%;
+    height: 700px;
+    position: relative;
+    overflow-y: hidden;
+    display: flex; /* Use flexbox for side-by-side layout */
+    flex-direction: row;
+    @media (max-width: 768px) {
+        flex-direction: column; /* Stack vertically on small screens */
+        height: auto;
+        margin-top: 40px;
+    }
+}
+
+.contactTitle {
+    text-align: center; 
+    font-size: 70px;
+    font-size: 55px;
+}
+
+.contactTitleCont {
+    text-align: center; 
+    font-size: 25px;
+    margin-top: -30px;
+}
+
+.reach-out {
+    flex: 1; /* Take 50% of the available width */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 45%;
+    @media (max-width: 768px) {
+        flex: none; /* Reset flex property */
+        max-width: 100%; /* Take full width on small screens */
+        height: 50%;
+        padding-top: 40px;
+    }
+}
+
+.hero{
+    flex: 1;
+    margin-top: 35px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form{
+    background-color: var(--background-color-about);
+    color: var(--font-color);
+    font-size: 18px;
+    width: 700px;
+    height: 400px;
+    margin-right: 20px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    border-style: solid;
+    border-color: #222222;
+    border-width: 2px;
+    overflow: hidden;
+}
+
+.mail-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.mail-icon span{
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+form input, textarea{
+    width: 100%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    border-radius: 5px;
+}
+
+#input-field{
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#input-field svg{
+    margin-right: 15px;
+}
+
+.submitBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.send-btn{
+    width: 100px;
+    border: none;
+    background-color: white;
+    color: black;
+    padding: 6px 0;
+    border-radius: 20px;
+}
