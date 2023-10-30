@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Home - {% endblock %}
+{% block content %}
+<head>
+    <style>
+        .pageTitle{
+            text-align: right;
+        }
+    </style>    
+</head>
+<body>
+    <div class="coverIMGHome">
+        <div class="hello words">
+            <div class="pageTitle">
+                <h1 class="welcomeTitle">Welcome</h1>
+                <h2 class="welcomeTitleCont">to <span class="auto-typed"></span></h2>
+            </div>
+            <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+            <script>
+                var types = new Typed(".auto-typed",{
+                    strings: ["Space Exploration Raiders!"/*, more words*/],
+                    typeSpeed: 65,
+                    backSpeed:40,
+                    backDelay: 2500,
+                    loop: true
+                })
+            </script>
+            <div class="welcomeText">
+                <p class="welcome_subtext">
+                    Learn about how to get involved with the group, the executive team, 
+                    and much more! The team looks forward to talking and working with you. 
+                </p>
+            </div>
+        </div>
+        <div class="hello pics">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="blob">
+                <path fill="#283574" d="M43.2,-77.2C54.5,-68.4,61,-53.7,67,-39.8C73,-26,78.4,-13,79.5,
+                0.6C80.6,14.3,77.4,28.5,70.1,40.1C62.8,51.7,51.5,60.6,39.1,69.4C26.8,78.2,13.4,86.8,-0.9,
+                88.3C-15.2,89.9,-30.4,84.5,-42.3,75.4C-54.1,66.4,-62.6,53.7,-71.7,40.6C-80.8,27.4,-90.3,
+                13.7,-89.4,0.5C-88.5,-12.6,-77.1,-25.3,-68.5,-39.2C-59.9,-53.1,-54.1,-68.3,-43.1,-77.3C-32.2,
+                -86.3,-16.1,-89.1,0,-89C16,-88.9,32,-86,43.2,-77.2Z" transform="translate(100 100)" />
+            </svg>
+            <img src="{% static 'logos/planet.png' %}" alt="planet" class="planet">
+            <img src="{% static 'logos/astronaut.png' %}" alt="astronaut" class="astronaut">
+            <img src="{% static 'logos/rocket.png' %}" alt="rocket" class="rocket">
+        </div>
+    </div>
+    <div class="about">
+        <h1 class="sectionTitle">About Us</h1>
+        <hr class="underline">
+        <p>
+            This is Texas Tech's Student Organization for the NASA Human Exploration 
+            Rover Challenge (HERC). The dedicated team consists of skilled aspiring engineers, 
+            passionate designers, and space enthusiasts, all collaborating 
+            to craft a cutting-edge human-powered rover for a prestigious NASA 
+            competition. The project showcases innovative technology, sleek aerodynamics, 
+            and robust mechanical systems. With a shared commitment to excellence, this 
+            team embodies collaboration, determination, and the drive to push the 
+            boundaries of human ingenuity in pursuit of space exploration.  
+        </p>
+        <!-- Benefits Section -->
+        <div class="benefits">
+            <div class="benefit flip-card">
+                <!-- <div class="benefitTitle">
+                    <h1>Calendar</h1>
+                </div> -->
+                <div class="benefitDes">
+                    <h1 class="calendarIntro">Event Calendar</h1>
+                    <hr class="underline">
+                    <!-- Event One -->
+                    <div class="event">
+                        <div class="event-left">
+                            <div class="event-date">
+                                <div class="date">27</div>
+                                <div class="month">Sep</div>
+                                <div class="year">2023</div>
+                            </div>
+                        </div>
+                        
+                        <div class="event-right">
+                            <h3 class="event-title">Student Talk</h3>
+                            
+                            <div class="event-description">
+                            Engage With Students
+                            </div>
+
+                            <div class="event-location">
+                                <img src="{% static 'icons/location.png' %}" alt="" /> Lubbock Cooper HS
+                            </div>
+                
+                            <div class="event-timing">
+                                <img src="{% static 'icons/time.png' %}" alt="" /> 8:00 am
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Event Two -->
+                    <div class="event">
+                        <div class="event-left">
+                            <div class="event-date">
+                                <div class="date">07</div>
+                                <div class="month">Oct</div>
+                                <div class="year">2023</div>
+                            </div>
+                        </div>
+                
+                        <div class="event-right">
+                            <h3 class="event-title">Tech Saavy</h3>
+                
+                            <div class="event-description">
+                                Hands-On Table Event
+                            </div>
+
+                            <div class="event-location">
+                                <img src="{% static 'icons/location.png' %}" alt="" /> TTU SUB
+                            </div>
+                
+                            <div class="event-timing">
+                                <img src="{% static 'icons/time.png' %}" alt="" /> 9:45 am
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--Event Three-->
+                    <div class="event">
+                        <div class="event-left">
+                            <div class="event-date">
+                                <div class="date">13</div>
+                                <div class="month">Nov</div>
+                                <div class="year">2023</div>
+                            </div>
+                        </div>
+                
+                        <div class="event-right">
+                            <h3 class="event-title">Family STEM Night</h3>
+                
+                            <div class="event-description">
+                                Hands-On Table Event
+                            </div>
+
+                            <div class="event-location">
+                                <img src="{% static 'icons/location.png' %}" alt="" /> TTU SUB
+                            </div>
+                
+                            <div class="event-timing">
+                                <img src="{% static 'icons/time.png' %}" alt="" /> 4:00 pm
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Event Three -->
+                
+            </div>
+            <div class="benefit flip-card" onclick="toggleFlip(this)">
+                <!-- <div class="benefitTitle">
+                    <h1>Pictures</h1>
+                </div> -->
+                <div class="benefitDes">
+                    <h1 class="picIntro">Pictures</h1>
+                    <hr class="underline">
+                </div>
+            </div>
+            <div class="benefit flip-card" onclick="toggleFlip(this)">
+                <!-- <div class="benefitTitle">
+                    <h1>News</h1>
+                </div> -->
+                <div class="benefitDes">
+                    <h1 class="newsIntro">Newsworthy</h1>
+                    <hr class="underline">
+                    <!-- <iframe class = article src="https://www.everythinglubbock.com/news/texas-tech-team-wins-safety-category-in-nasa-rover-challenge/"
+                frameborder="0" scrolling="auto" width="100%" height="400"></iframe> -->
+                </div>
+            </div>            
+        </div>       
+    </div>
+</body>
+
+{% endblock %}

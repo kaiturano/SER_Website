@@ -1,0 +1,237 @@
+    {% extends "base.html" %}
+    {% load static %}
+    {% block title %}Our Team - {% endblock %}
+    {% block content %}
+    <head>
+        <!--Transparent header bar-->
+        <script>
+            const header = document.querySelector('header');
+            header.classList.add('team');
+        </script>
+    </head>
+    <body>
+        <section class="parallax-container2">
+            <div class="teamImageContainer"></div>
+        </section>
+        <section class="parallax-container4">
+            <div class="execImageContainer"></div>
+        </section>
+        <div class="officers">
+            <h1 class="sectionTitle">Executive Team</h1>
+            <hr class="underline">
+            <div class="members">
+                <div class="member">
+                    <img src="{% static 'members/alex.jpg' %}" alt="Alex" class="memberIMG">
+                    <h2 class="memberName">Alex Calabrese</h2>
+                    <h3 class="memberTitle">President</h3>
+                    <h3 class="major">Senior Design Student: Wheels<br>Mechanical Engineering | August 2024</h3>
+                    <a href="https://www.linkedin.com/in/alex-calabrese-1110/" class="linkedin-link">
+                        <div class="linkedin-button">
+                            <img src="{% static 'icons/linkedinBlack.png' %}" alt="LinkedIn Icon" class="linkedin-icon">
+                        </div>
+                    </a>  
+                </div> 
+                <div class="member">
+                    <img src="{% static 'members/cruz.jpg' %}" alt="Cruz" class="memberIMG">
+                    <h2 class="memberName">Cruz Torres</h2>
+                    <h3 class="memberTitle">Vice President</h3>
+                    <h3 class="major">Mechanical Engineering | December 2024</h3>
+                    <a href="https://www.linkedin.com/in/cruz-torres/" class="linkedin-link">
+                        <div class="linkedin-button">
+                            <img src="{% static 'icons/linkedinBlack.png' %}" alt="LinkedIn Icon" class="linkedin-icon">
+                        </div>
+                    </a>  
+                </div>
+                <div class="member">
+                    <img src="{% static 'members/allie.jpg' %}" alt="Allie" class="memberIMG">
+                    <h2 class="memberName">Allie Serrato</h2>
+                    <h3 class="memberTitle">Treasurer</h3>
+                    <h3 class="major">Computer Science | December 2024</h3>
+                    <a href="https://www.linkedin.com/in/alex-calabrese-1110/" class="linkedin-link">
+                        <div class="linkedin-button">
+                            <img src="{% static 'icons/linkedinBlack.png' %}" alt="LinkedIn Icon" class="linkedin-icon">
+                        </div>
+                    </a>  
+                </div>
+                <div class="member">
+                    <img src="{% static 'members/jason.jpg' %}" alt="Jason" class="memberIMG">
+                    <h2 class="memberName">Jason Kondikoff</h2>
+                    <h3 class="memberTitle">Treasurer</h3>
+                    <h3 class="major">Mechanical Engineering | May 2024</h3>
+                    <a href="https://www.linkedin.com/in/jason-kondikoff-a2a95b229/" class="linkedin-link">
+                        <div class="linkedin-button">
+                            <img src="{% static 'icons/linkedinBlack.png' %}" alt="LinkedIn Icon" class="linkedin-icon">
+                        </div>
+                    </a>  
+                </div>
+                <div class="member">
+                    <img src="{% static 'members/grace.jpg' %}" alt="Grace" class="memberIMG">
+                    <h2 class="memberName">Grace Larvin</h2>
+                    <h3 class="memberTitle">Historian</h3>
+                    <h3 class="major">Senior Design Student: Steering/Tool<br>Mechanical Engineering | May 2024</h3>
+                    <a href="https://www.linkedin.com/in/grace-larvin-2aa92824b/" class="linkedin-link">
+                        <div class="linkedin-button">
+                            <img src="{% static 'icons/linkedinBlack.png' %}" alt="LinkedIn Icon" class="linkedin-icon">
+                        </div>
+                    </a>  
+                </div>
+                <div class="member">
+                    <img src="{% static 'members/jay.jpg' %}" alt="jay-hodge" class="memberIMG">
+                    <h2 class="memberName">Jay Hodge</h2>
+                    <h3 class="memberTitle">Secretary</h3>
+                    <h3 class="major">Mechanical Engineering | December 2024</h3>
+                    <a href="https://www.linkedin.com/in/jay-hodge/" class="linkedin-link">
+                        <div class="linkedin-button">
+                            <img src="{% static 'icons/linkedinBlack.png' %}" alt="LinkedIn Icon" class="linkedin-icon">
+                        </div>
+                    </a>  
+                </div>
+                <div class="member">
+                    <img src="{% static 'members/stephen.jpg' %}" alt="Stephen" class="memberIMG">
+                    <h2 class="memberName">Stephen Shearer</h2>
+                    <h3 class="memberTitle">Saftey Officer</h3>
+                    <h3 class="major">Senior Design Student: Drivetrain<br>Mechanical Engineering | May 2024</h3>
+                    <a href="https://www.linkedin.com/in/stephen-shearer-97810220a/" class="linkedin-link">
+                        <div class="linkedin-button">
+                            <img src="{% static 'icons/linkedinBlack.png' %}" alt="LinkedIn Icon" class="linkedin-icon">
+                        </div>
+                    </a>  
+                </div>
+                <div class="member">
+                    <img src="{% static 'members/kaitlyn.jpg' %}" alt="Kaitlyn" class="memberIMG">
+                    <h2 class="memberName">Kaitlyn Urano</h2>
+                    <h3 class="memberTitle">Stem Outreach<br>Web Developer</h3>
+                    <h3 class="major">Computer Science | May 2024</h3>
+                    <a href="https://www.linkedin.com/in/kaitlyn-urano/" class="linkedin-link">
+                        <div class="linkedin-button">
+                            <img src="{% static 'icons/linkedinBlack.png' %}" alt="LinkedIn Icon" class="linkedin-icon">
+                        </div>
+                    </a>  
+                </div>
+            </div>
+        </div>
+        <div class="seniorDesign">
+            <h1 class="sectionTitle">Senior Design Students</h1>
+            <hr class="underline">
+            <div class="members">
+                <div class="member">
+                    <img src="{% static 'members/jessica.jpg' %}" alt="Jessica" class="memberIMG">
+                    <h2 class="memberName">Jessica Bradski</h2>
+                    <h3 class="memberTitle">Senior Design Student</h3>
+                    <h3 class="major">Chassis<br>Mechanical Engineering | May 2024</h3>
+                    <a href="https://www.linkedin.com/in/alex-calabrese-1110/" class="linkedin-link">
+                        <div class="linkedin-button">
+                            <img src="{% static 'icons/linkedinBlack.png' %}" alt="LinkedIn Icon" class="linkedin-icon">
+                        </div>
+                    </a>  
+                </div>
+                <div class="member">
+                    <img src="{% static 'members/annie.jpg' %}" alt="Annie" class="memberIMG">
+                    <h2 class="memberName">Annie Halibun</h2>
+                    <h3 class="memberTitle">Senior Design Student</h3>
+                    <h3 class="major">Suspension<br>Mechanical Engineering | May 2024</h3>
+                    <a href="https://www.linkedin.com/in/alex-calabrese-1110/" class="linkedin-link">
+                        <div class="linkedin-button">
+                            <img src="{% static 'icons/linkedinBlack.png' %}" alt="LinkedIn Icon" class="linkedin-icon">
+                        </div>
+                    </a>  
+                </div>
+                <div class="member">
+                    <div class="memberIMG"></div>
+                    <h2 class="memberName">Paul</h2>
+                    <h3 class="memberTitle">Senior Design Student</h3>
+                    <h3 class="major">Brakes<br>Mechanical Engineering | May 2024</h3>
+                    <a href="https://www.linkedin.com/in/alex-calabrese-1110/" class="linkedin-link">
+                        <div class="linkedin-button">
+                            <img src="{% static 'icons/linkedinBlack.png' %}" alt="LinkedIn Icon" class="linkedin-icon">
+                        </div>
+                    </a>  
+                </div>
+            </div>
+        </div>
+        <div class="assistants">
+            <h1 class="sectionTitle">Assistants</h1>
+            <hr class="underline">
+            <div class="members">
+                <div class="member">
+                    <img src="{% static 'members/michael.jpg' %}" alt="Michael" class="memberIMG">
+                    <h2 class="memberName">Michael Trondsen</h2>
+                    <h3 class="memberTitle">Presidential Assistant</h3>
+                    <h3 class="major">Major | Graduation Date</h3>
+                    <a href="https://www.linkedin.com/in/alex-calabrese-1110/" class="linkedin-link">
+                        <div class="linkedin-button">
+                            <img src="{% static 'icons/linkedinBlack.png' %}" alt="LinkedIn Icon" class="linkedin-icon">
+                        </div>
+                    </a>  
+                </div>
+                <div class="member">
+                    <img src="{% static 'members/daley.jpg' %}" alt="Daley" class="memberIMG">
+                    <h2 class="memberName">Daley Crews</h2>
+                    <h3 class="memberTitle">XXXXX Assistant</h3>
+                    <h3 class="major">Major | Graduation Date</h3>
+                    <a href="https://www.linkedin.com/in/alex-calabrese-1110/" class="linkedin-link">
+                        <div class="linkedin-button">
+                            <img src="{% static 'icons/linkedinBlack.png' %}" alt="LinkedIn Icon" class="linkedin-icon">
+                        </div>
+                    </a>  
+                </div>
+                <div class="member">
+                    <img src="{% static 'members/yoosr.jpg' %}" alt="Yoosr" class="memberIMG">
+                    <h2 class="memberName">Yoosr Hassan</h2>
+                    <h3 class="memberTitle">XXXXX Assistant</h3>
+                    <h3 class="major">Major | Graduation Date</h3>
+                    <a href="https://www.linkedin.com/in/alex-calabrese-1110/" class="linkedin-link">
+                        <div class="linkedin-button">
+                            <img src="{% static 'icons/linkedinBlack.png' %}" alt="LinkedIn Icon" class="linkedin-icon">
+                        </div>
+                    </a>  
+                </div>
+                <div class="member">
+                    <img src="{% static 'members/caroline.jpg' %}" alt="Caroline" class="memberIMG">
+                    <h2 class="memberName">Caroline Ormond</h2>
+                    <h3 class="memberTitle">XXXXX Assistant</h3>
+                    <h3 class="major">Major | Graduation Date</h3>
+                    <a href="https://www.linkedin.com/in/alex-calabrese-1110/" class="linkedin-link">
+                        <div class="linkedin-button">
+                            <img src="{% static 'icons/linkedinBlack.png' %}" alt="LinkedIn Icon" class="linkedin-icon">
+                        </div>
+                    </a>  
+                </div>
+                <div class="member">
+                    <img src="{% static 'members/chufran.jpg' %}" alt="Justus" class="memberIMG">
+                    <h2 class="memberName">Chufran Murtuza</h2>
+                    <h3 class="memberTitle">Safety Officer's Assistant</h3>
+                    <h3 class="major">Microbiology | May 2025</h3>
+                    <a href="https://www.linkedin.com/in/alex-calabrese-1110/" class="linkedin-link">
+                        <div class="linkedin-button">
+                            <img src="{% static 'icons/linkedinBlack.png' %}" alt="LinkedIn Icon" class="linkedin-icon">
+                        </div>
+                    </a>  
+                </div>
+                <div class="member">
+                    <img src="{% static 'members/lauren.jpg' %}" alt="Lauren" class="memberIMG">
+                    <h2 class="memberName">Lauren Granado</h2>
+                    <h3 class="memberTitle">XXXXX Assistant</h3>
+                    <h3 class="major">Major | Graduation Date</h3>
+                    <a href="https://www.linkedin.com/in/alex-calabrese-1110/" class="linkedin-link">
+                        <div class="linkedin-button">
+                            <img src="{% static 'icons/linkedinBlack.png' %}" alt="LinkedIn Icon" class="linkedin-icon">
+                        </div>
+                    </a>  
+                </div>
+                <div class="member">
+                    <img src="{% static 'members/justus.jpg' %}" alt="Justus" class="memberIMG">
+                    <h2 class="memberName">Justus Vigil</h2>
+                    <h3 class="memberTitle">XXXXX Assistant</h3>
+                    <h3 class="major">Major | Graduation Date</h3>
+                    <a href="https://www.linkedin.com/in/alex-calabrese-1110/" class="linkedin-link">
+                        <div class="linkedin-button">
+                            <img src="{% static 'icons/linkedinBlack.png' %}" alt="LinkedIn Icon" class="linkedin-icon">
+                        </div>
+                    </a>  
+                </div>
+            </div>
+        </div>
+    </body>
+
+    {% endblock %}

@@ -1,0 +1,790 @@
+:root{
+    --light-red: #C39C95;
+    --dark-red: #CF291D;
+    --light-grey: #797979;
+    --dark-grey: #414141da;
+    --white: #D3D3D3;
+    --shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    --imagePlaceholder: #222222;
+    --background-color: rgba(0, 0, 0, 0.815);
+    --background-color-header: #902c25;
+    --background-color-about: #902c25;
+    --background-color-event: #797979c3; 
+    --background-color-date: #CF291D; 
+    --font-color: #D3D3D3;
+    /* --hover-color: black; */
+    --hover-color: #d3d3d3;
+}
+:root.light-mode {
+    --background-color:  #D3D3D3;
+    --background-color-header: #CF291D;
+    --background-color-about: #cd8173;
+    --background-color-event: #A0A0A0; 
+    --background-color-date: #CF291D; 
+    --font-color: black;
+}
+
+:root.dark-mode{
+    --background-color: rgba(0, 0, 0, 0.815);
+    --background-color-header: #902c25;
+    --background-color-about: #902c25;
+    --background-color-event: #797979c3; 
+    --background-color-date: #CF291D; 
+    --font-color: #D3D3D3;
+}
+
+* {
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+    cursor: url("/static/logos/cursor.7f2de9aa49b8.png"), default;
+}
+
+body{
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--font-color);
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-y: scroll; 
+    box-shadow: var(--shadow);
+}
+
+.btn-toggle{
+    cursor: pointer;
+}
+
+body::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
+
+.benefitDes::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
+
+header {
+    background-color: var(--background-color-header);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center; /* Center vertically */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    transition: top 0.3s ease;
+    padding: 10px 0;
+    height: 80px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: top 0.5s ease, background-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+header.team{
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.logo {
+    display: flex;
+    justify-content: flex-start; /* Align logo to the left */
+    align-items: center;
+    margin: -10px 0px 60px 40px; /* Adjust top and left margins */
+}
+
+.logo-image {
+    width: 140px; /* Adjust the logo's width */
+    aspect-ratio: 1;
+    overflow: visible;
+}
+
+.navMain {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center; /* Center vertically */
+    flex-grow: 1;
+    margin: -10px 40px 60px 0px;
+}
+
+a button{
+    text-decoration: none;
+    color: var(--white); /* Add your preferred text color */
+    margin: 10px;
+    text-align: center;
+}
+
+nav a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: blink;
+    transition: transform 0.2s ease-out;
+}
+
+.navMain a:hover {
+    text-decoration: none;
+    transform: translateY(-10px);
+    position: relative; /* Add relative positioning for pseudo-element */
+}
+
+.navMain a button{
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.navMain a:hover button{
+    color: var(--hover-color);
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+main{
+    margin: auto;
+    width: 100%;
+    overflow-x: visible;
+    padding-bottom: 50px;
+}
+
+.coverIMG {
+    width: 100%;
+    height: 600px; /* Adjust the height of your logo 600px*/
+    position: relative; /* Make this container relative to position its children */
+    overflow-y: hidden; /* Hide vertical scrollbar */
+}
+
+.coverIMGHome{
+    display: flex;
+    height: 600px;
+}
+
+.hello{
+    flex: 1;
+    
+}
+
+.pageTitle {
+    text-align: left;
+    position: absolute;
+    top: 10px;
+    left: 25px;
+    padding-top: 25px;
+}
+
+.welcomeTitle {
+    text-align: left; /* Change to left alignment */
+    margin-left: 92px; /* Remove the margin to align with the subtitle */
+    margin-top: 70px;
+    font-size: 70px;
+    margin-bottom: 10px;
+}
+
+.welcomeTitleCont {
+    text-align: left; /* Change to left alignment */
+    margin-left: 95px; /* Remove the margin to align with the subtitle */
+    margin-bottom: 30px;
+    font-size: 30px;
+    margin-top: -30px;
+}
+
+span{
+    color: var(--font-color);
+    text-shadow: 0.75px 0.75px var(--dark-red);
+}
+
+.welcomeText {
+    margin-top: 5%;
+    text-align: left;
+    max-width: 40%;
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 95px; 
+}
+
+.pics {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative; /* Make this container relative */
+}
+
+.blob {
+    position: absolute; /* Position the blob absolutely within the container */
+    top: 0;
+    left: 0;
+    z-index: 1; /* Place the blob below other elements */
+}
+
+.planet{
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    margin-top: -50px;
+    width: 500px;
+    margin-right: 200px;
+    animation-name: floatAnimation;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.astronaut {
+    position: absolute; /* Position the astronaut absolutely within the container */
+    top: 0;
+    margin-right: 100px;
+    margin-left: 50px;
+    z-index: 4; /* Place the astronaut above the blob */
+    width: 250px;
+    margin-top: 350px;
+    animation-name: floatAnimation;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.rocket {
+    transform: scaleX(-1); /* Flip the rocket horizontally */
+    position: absolute; /* Position the rocket absolutely within the container */
+    top: 0;
+    margin-right: 100px;
+    margin-left: 500px;
+    margin-top: 250px;
+    width: 200px; /* Adjust the rocket size as needed */
+    z-index: 3; /* Place the rocket above the blob and astronaut */
+    animation-name: floatAnimation;
+    animation-duration: 4.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-20px); /* Adjust the value to control the floating height */
+    }
+}
+
+.about{
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    overflow-x: visible;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: var(--background-color-about);
+    color: var(--font-color);
+    box-shadow: var(--shadow);
+    border-style: solid;
+    border-color: #222222;
+    border-width: 2px;
+}
+
+.benefits{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    z-index: 50;
+    overflow-x: visible;
+}
+
+.benefit{
+    width: 300px;
+    height: 330px;
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    perspective: 1000px; /* Set the perspective for 3D effect */
+    padding: 20px;
+    overflow-x: visible;
+    opacity: 0; /* Start with opacity 0 */
+    transition: opacity 0.5s ease; /* Smooth transition for opacity */
+}
+
+.benefit.visible{
+    opacity: 1;
+}
+
+.menuButton{
+    color: var(--white);
+    position: relative;
+}
+
+.benefitDes {
+    background-color: var(--background-color-event);
+    color: var(--font-color);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hide the backface of the card */
+    transform-origin: center; /* Set the rotation axis to the center of the card */
+    border-radius: 20px;
+    transition: transform 0.4s ease-out; /* Add a smooth transition */
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-y: scroll; 
+    box-shadow: var(--shadow);
+    border-style: solid;
+    border-color: #222222;
+    border-width: 2px;
+}
+
+.benefitDes .event {
+    box-shadow: var(--shadow);
+    display: flex;
+    border-radius: 20px;
+    margin: 32px 0;
+    border-style: solid;
+    border-color: #222222;
+    border-width: 3px;
+}
+
+.calendarIntro, .picIntro, .newsIntro{
+    font-weight: 300;
+    font-size: 28px;
+}
+
+.event .event-left {
+    background: var(--background-color-date);
+    min-width: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #eee;
+    padding: 8px 48px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 8px 0 0 8px;
+}
+
+.event .event-left .date {
+    font-size: 56px;
+}
+
+.event .event-left .month {
+    font-size: 16px;
+    font-weight: normal;
+}
+.event .event-left .year {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.event .event-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 24px;
+    background-color: var(--white);
+    color: black;
+}
+
+.event .event-right h3.event-title {
+    font-size: 18px;
+    margin: 5px 0 0 0;
+    color: var(--font-color);
+    text-transform: uppercase;
+    padding: 0;
+}
+
+.event .event-right .event-timing,
+.event .event-right .event-location{
+    background: var(--dark-red);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    padding: 4px;
+    border-radius: 16px;
+    margin: 5px 0px 5px 12px;
+    font-size: 14px;
+}
+
+.event .event-right .event-timing img {
+    height: 20px;
+    padding-right: 8px;
+}
+
+@media (max-width: 550px) {
+.event {
+    flex-direction: column;
+}
+
+.event .event-left {
+    padding: 0;
+    border-radius: 8px 8px 0 0;
+}
+
+.event .event-left .event-date .date,
+.event .event-left .event-date .month, 
+.event .event-left .event-date .year {
+    display: inline-block;
+    font-size: 24px;
+}
+
+.event .event-left .event-date {
+    padding: 10px 0;
+}
+}
+
+/*-----------------END OF CALENDAR----------------------*/
+/*-----------------START OF FOOTER----------------------*/
+.footerText{
+    margin: 0;
+    color: var(--white);
+}
+
+footer{
+    margin: 0;
+    position: relative;
+    z-index: 90;
+    box-shadow: var(--shadow);
+    background-color: var(--imagePlaceholder);
+    padding: 15px 15px;
+    text-align: center;
+    font-size: small;
+}
+
+footer a{
+    text-decoration: none;
+    color: var(--white);
+}
+
+.socials{
+    margin-top: 20px;
+}
+
+.instagram-link {
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+}
+
+.social-button {
+    display: inline-block;
+    position: relative;
+}
+/*------------Side Container---------------------*/
+.sideMenu {
+    display: flex;
+    flex-direction: column; /* To stack the mode and up-icon vertically */
+    align-items: flex-end; /* To align them to the right side */
+    position: fixed;
+    bottom: 5px;
+    right: 8px;
+    padding: 5px;
+    border-radius: 5px;
+    z-index: 999;
+    cursor: pointer;
+}
+
+.mode-up-container {
+    display: flex;
+    flex-direction: column; /* Place mode and up in a column */
+    align-items: center; /* Center them horizontally */
+    cursor: pointer;
+}
+
+.toggle .input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.toggle, .up {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background-color: #fff;
+    line-height: 1;
+    margin-bottom: 5px; /* Add margin to separate mode and up-icon */
+    cursor: pointer;
+}
+
+.icon {
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+    transition: transform 500ms;
+    cursor: pointer;
+}
+
+.up_arrow{
+    cursor: pointer;
+}
+
+.arrow-container {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow-container img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.icon--moon {
+    transition-delay: 200ms;
+}
+
+.icon--sun {
+    transform: scale(0);
+}
+
+#switch:checked + .icon--moon {
+    transform: rotate(360deg) scale(0);
+}
+
+#switch:checked ~ .icon--sun {
+    transition-delay: 200ms;
+    transform: scale(1) rotate(360deg);
+}
+/*-----------------------------END OF HOME PAGE || START OF TEAM-----------------------*/
+.coverIMGTeam {
+    height: 100px;
+    text-align: center;
+    position: relative;
+    padding-top: 20px; /* Add some top padding as needed */
+    overflow: hidden;
+}
+
+.IntroText {
+    text-align: center;
+    margin-top: 10px; /* Adjust the margin as needed */
+}
+
+.intro_subtext {
+    font-size: 18px; /* Adjust the font size as needed */
+    margin-top: 10px; /* Adjust the margin as needed */
+}
+
+.execImageContainer, 
+.teamImageContainer {
+    text-align: center;
+    margin: 30px auto; /* Add margin for spacing around the image */
+    /* margin-top: 20px; */
+}
+
+@media only screen and (max-device-width: 1366px) {
+    .parallax-container {
+        background-attachment: scroll;
+    }
+} 
+
+.parallax-container2{
+    background-image: url("/static/members/everyone.8dea5247a719.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.parallax-container3{
+    background-image: url("/static/members/red.b56f3244e539.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover; 
+    min-height: 1vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+.parallax-container4{
+    background-image: url("/static/members/exec.f089358d3b40.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .parallax-container5{
+    background-image: url("/static/members/red.b56f3244e539.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    min-height: 1vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+.teamImage {
+    max-width: 100%; /* Adjust the max-width as needed */
+    height: auto; /* Maintain the aspect ratio */
+    display: block; /* Center the image */
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+.teamTitle {
+    text-align: center;
+    font-size: 58px;
+    margin-bottom: 20px; /* Add some bottom margin for spacing */
+}
+
+
+.sectionTitle{
+    font-family:'Lucida Sans';
+    margin: 30px auto;
+    text-align: center;
+}
+
+.underline{
+    max-width: 600px;
+    width: 80%;
+}
+
+.members{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    color: black;
+}
+
+.member{
+    text-align: center;
+    width: 300px;
+    height: 555px;
+    opacity: 0; /* Start with opacity 0 */
+    transition: opacity 0.5s ease; /* Smooth transition for opacity */
+    background-color: var(--background-color-about);
+    color: var(--font-color);
+    border-radius: 20px;
+    margin: 10px;
+    box-shadow: var(--shadow);
+}
+
+.member.visible{
+    opacity: 1;
+}
+
+.memberIMG {
+    margin: 10px auto;
+    width: 275px; /* Adjust the width as needed to match the circular placeholder */
+    height: 367px; /* Adjust the height as needed to match the circular placeholder */
+    aspect-ratio: 1;
+    border-radius: 20px; /* Set border-radius to 50% for a circular shape */
+}
+
+.memberName{
+    margin: 0px;
+    font-size: 22px;
+    font-weight: 900;
+}
+
+.memberTitle{
+    margin: 0px;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 200;
+    
+}
+
+.major{
+    margin: 0px;
+    font-size: 14px;
+    font-size: italic;
+    font-weight: 175;
+}
+
+.linkedin-link {
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+}
+
+.linkedin-button {
+    display: inline-block;
+    position: relative;
+}
+
+.linkedin-icon {
+    width: 28px; /* Adjust the width as needed */
+    height: 28px; /* Adjust the height as needed */
+    cursor: pointer;
+}
+/*---------------------ENDO OF TEAM || START OF SPONSOR---------------*/
+.coverIMGSponsor {
+    width: 100%;
+    height: 300px; /* Adjust the height of your logo */
+    background-color: var(--light-grey);
+    position: relative; /* Make this container relative to position its children */
+    overflow-y: hidden; /* Hide vertical scrollbar */
+}
+
+p{
+    font-size: 18px;
+}
+
+.sponsors{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.sponsor{
+    text-align: center;
+    margin: 20px;
+}
+
+.sponsorLogo{
+    margin: 10px auto;
+    padding: 10px;
+    width: 300px;
+    aspect-ratio: 16/9;
+    background-color: var(--imagePlaceholder);
+    border-radius: 70px;
+}
+
+.sponsorLogo a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.thankyou,.howSponsor{
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+    max-width: 90%;
+}
+  
+
+/*---------------------------------CONTACT US----------------------*/
