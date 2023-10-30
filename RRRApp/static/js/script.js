@@ -86,7 +86,7 @@ function updateMainPadding() {
     } 
     else {
         menu.classList.remove('small-screen');
-        menuButton.style.marginLeft = "";
+        // menuButton.style.marginLeft = "";
     }
 
     const navElement = document.getElementById("mainHeader");
