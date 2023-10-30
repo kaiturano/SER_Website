@@ -185,7 +185,7 @@ main{
     margin: auto;
     width: 100%;
     overflow-x: visible;
-    padding-bottom: 50px;
+    padding-bottom: 30px;
 }
 
 .coverIMG {
@@ -200,15 +200,6 @@ main{
     }
 }
 
-.coverIMGHome{
-    display: flex;
-    height: 600px;
-}
-
-.hello{
-    flex: 1;
-}
-
 .pageTitle {
     text-align: left;
     position: absolute;
@@ -218,11 +209,37 @@ main{
     margin: 0;
 }
 
+.coverIMGHome {
+    width: 100%;
+    height: 700px;
+    position: relative;
+    overflow-y: hidden;
+    display: flex; /* Use flexbox for side-by-side layout */
+    flex-direction: row;
+    @media (max-width: 768px) {
+        flex-direction: column; /* Stack vertically on small screens */
+    }
+}
+
+.welcomeWords{
+    flex: 1; /* Take 50% of the available width */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    @media (max-width: 768px) {
+        flex: none; /* Reset flex property */
+        width: 100%; /* Take full width on small screens */
+        height: auto;
+        padding-top: 40px;
+    }
+}
+
 .welcomeTitle {
     text-align: left; /* Change to left alignment */
     font-size: 70px;
-    margin-top: 00px;
-    margin-bottom: 00px;
 }
 
 .welcomeTitleCont {
@@ -231,58 +248,76 @@ main{
     margin-top: -20px;
 }
 
-span{
+.auto-typed{
     color: var(--font-color);
     text-shadow: 0.75px 0.75px var(--dark-red);
 }
 
-.welcomeText {
-    text-align: left;
-    margin-top: 10px;
-    max-width: 40%;
-    position: absolute;
-    left: 25px;
-    top: 50%;
-    transform: translateY(-50%);
+.welcomeTitle {
+    text-align: left; 
+    font-size: 70px;
+    margin-top: 20px;
+    margin-bottom: -20px;
 }
 
-.pics {
+.welcomeTitleCont {
+    text-align: left; 
+    font-size: 30px;
+    margin: 0;
+}
+
+.welcome_subtext{
+    max-width: 80%;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+.welcomePics {
+    flex: 1; /* Take 50% of the available width */
+    margin-top: 20px;
+    height: 100%;
     display: flex;
+    flex-direction: column; /* Center contents vertically and horizontally */
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    position: relative; /* Make this container relative */
+    @media (max-width: 768px) {
+        flex: none; /* Reset flex property */
+        width: 100%; /* Take full width on small screens */
+        height: auto;
+        padding-top: 40px;
+    }
 }
 
 .blob {
-    position: absolute; /* Position the blob absolutely within the container */
-    top: 0;
-    left: 0;
+    margin-top: 100px; /* Increase the top margin to position it lower on the page */
     z-index: 1; /* Place the blob below other elements */
+    align-items: center;
+    width: 100%; /* Increase the width to make it larger */
+    transform: scale(1.4);
 }
 
 .planet{
     position: absolute;
     z-index: 2;
     top: 0;
-    margin-top: -50px;
-    width: 500px;
-    margin-right: 200px;
+    width: 550px; /* Increase the width of the planet */
+    margin-right: 400px;
     animation-name: floatAnimation;
-    animation-duration: 5s;
+    animation-duration: 4.5s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
 
 .astronaut {
-    position: absolute; /* Position the astronaut absolutely within the container */
+    position: absolute;
     top: 0;
-    margin-right: 100px;
-    margin-left: 50px;
-    z-index: 4; /* Place the astronaut above the blob */
-    width: 250px;
-    margin-top: 350px;
+    margin-right: 40px;
+    z-index: 4;
+    width: 250px; /* Increase the width of the astronaut */
+    margin-top: 450px;
     animation-name: floatAnimation;
     animation-duration: 2s;
     animation-timing-function: ease-in-out;
@@ -291,20 +326,21 @@ span{
 }
 
 .rocket {
-    transform: scaleX(-1); /* Flip the rocket horizontally */
-    position: absolute; /* Position the rocket absolutely within the container */
+    transform: scaleX(-1);
+    position: absolute;
     top: 0;
     margin-right: 100px;
-    margin-left: 500px;
-    margin-top: 250px;
-    width: 200px; /* Adjust the rocket size as needed */
-    z-index: 3; /* Place the rocket above the blob and astronaut */
+    margin-left: 550px;
+    margin-top: 220px;
+    width: 250px; /* Increase the width of the rocket */
+    z-index: 3;
     animation-name: floatAnimation;
-    animation-duration: 4.5s;
+    animation-duration: 3s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
+
 
 @keyframes floatAnimation {
     0% {
@@ -734,12 +770,6 @@ footer a{
     display: inline-block;
     position: relative;
 }
-
-.linkedin-icon {
-    width: 28px; /* Adjust the width as needed */
-    height: 28px; /* Adjust the height as needed */
-    cursor: pointer;
-}
 /*---------------------ENDO OF TEAM || START OF SPONSOR---------------*/
 .coverIMGSponsor {
     width: 100%;
@@ -783,16 +813,12 @@ footer a{
 
 .sponsorTitle {
     text-align: center; 
-    /* margin-left: 92px; 
-    margin-top: 70px; */
     font-size: 70px;
     margin-bottom: 10px;
 }
 
 .sponsorTitleCont {
     text-align: center; 
-    /* margin-left: 95px; 
-    margin-bottom: 30px; */
     font-size: 30px;
     margin-top: -30px;
 }
@@ -844,6 +870,119 @@ footer a{
     height: 100%;
 }
 
-
-
 /*---------------------------------CONTACT US----------------------*/
+.coverIMGContact {
+    width: 100%;
+    height: 700px;
+    position: relative;
+    overflow-y: hidden;
+    display: flex; /* Use flexbox for side-by-side layout */
+    flex-direction: row;
+    @media (max-width: 768px) {
+        flex-direction: column; /* Stack vertically on small screens */
+        height: auto;
+        margin-top: 40px;
+    }
+}
+
+.contactTitle {
+    text-align: center; 
+    font-size: 70px;
+    font-size: 55px;
+}
+
+.contactTitleCont {
+    text-align: center; 
+    font-size: 25px;
+    margin-top: -30px;
+}
+
+.reach-out {
+    flex: 1; /* Take 50% of the available width */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 45%;
+    @media (max-width: 768px) {
+        flex: none; /* Reset flex property */
+        max-width: 100%; /* Take full width on small screens */
+        height: 50%;
+        padding-top: 40px;
+    }
+}
+
+.hero{
+    flex: 1;
+    margin-top: 35px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form{
+    background-color: var(--background-color-about);
+    color: var(--font-color);
+    font-size: 18px;
+    width: 700px;
+    height: 400px;
+    margin-right: 20px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    border-style: solid;
+    border-color: #222222;
+    border-width: 2px;
+    overflow: hidden;
+}
+
+.mail-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.mail-icon span{
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+form input, textarea{
+    width: 100%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    border-radius: 5px;
+}
+
+#input-field{
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#input-field svg{
+    margin-right: 15px;
+}
+
+.submitBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.send-btn{
+    width: 100px;
+    border: none;
+    background-color: white;
+    color: black;
+    padding: 6px 0;
+    border-radius: 20px;
+}
