@@ -120,6 +120,32 @@ header.team{
     margin: -10px 40px 60px 0px;
 }
 
+/* Style for the dropdown menu */
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: var(--background-color-header);
+    min-width: 160px;
+    box-shadow: var(--shadow);
+    border-radius: 8px;
+    z-index: 1;
+}
+
+.dropdown-content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 8px;
+    text-align: center;
+}
+
+.navMain:hover .dropdown {
+    display: block;
+}
+
 a button{
     text-decoration: none;
     color: var(--white); /* Add your preferred text color */
@@ -155,36 +181,6 @@ button {
     border: none;
 }
 
-/* Dropdown container (hidden by default) */
-.dropdown-content {
-    display: none; /* Hide by default */
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    /* Add more styling for the dropdown items (e.g., padding, colors) here */
-}
-
-/* Media query to show/hide mobile menu button and dropdown */
-@media screen and (max-width: 745px) {
-    .mobile-menu-button {
-        display: block; /* Show the button on smaller screens */
-        color: var(--white);
-        font-size: 35px;
-        margin-bottom: 100%;
-    }
-
-    .altNav .dropdown-content {
-        position: static;
-        display: none; /* Hide the dropdown initially */
-        /* Additional styling as needed */
-    }
-
-    .altNav:hover .dropdown-content {
-        display: block; 
-    }
-}
-
 main{
     margin: auto;
     width: 100%;
@@ -206,14 +202,7 @@ main{
 
 .coverIMGHome{
     display: flex;
-    width: 100%;
-    position: relative;
-    /* overflow: hidden; */
-    flex-direction: row;
-    height: 700px;
-    @media (max-width: 768px) {
-        flex-direction: column; /* Stack vertically on small screens */
-    }
+    height: 600px;
 }
 
 .hello{
@@ -436,7 +425,7 @@ span{
     font-size: 16px;
     font-weight: normal;
 }
-/*comment*/
+
 .event .event-right {
     display: flex;
     flex-direction: column;
