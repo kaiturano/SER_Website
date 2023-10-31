@@ -219,17 +219,36 @@ function enableScrolling() {
 let prevScrollPos = window.pageYOffset;
 
 window.onscroll = function() {
-    const currentScrollPos = window.pageYOffset;    
-    const navElement = document.getElementById("mainHeader");
-
-    if (prevScrollPos > currentScrollPos) {
-        document.getElementById("mainHeader").style.top = "0";
-    } else {
-        document.getElementById("mainHeader").style.top = `-${navElement.clientHeight}px`; // Hide header
+    const currentScrollPos = window.pageYOffset;
+    const header = document.getElementById("mainHeader");
+    const viewportWidth = window.innerWidth;
+    if ((viewportWidth*.5)>300){
+        width = 50;
+    }
+    else{
+        width = viewportWidth*.5;
     }
 
-    prevScrollPos = currentScrollPos;
+    if (header){
+        // Check if scrolled more than width amount of pixels
+        if (currentScrollPos > width) {
+            if (prevScrollPos > currentScrollPos) {
+                header.style.top = "-5px";
+            } else {
+                header.style.top = `-${header.clientHeight}px`; // Hide header
+            }
+        }
+
+        // Keep header visible for the first few hundred pixels
+        else {
+            header.style.top = "0";
+        }
+
+        prevScrollPos = currentScrollPos;
+    }
 };
+
+
 //---------------Up Arrow-------------------------------//
 document.addEventListener("DOMContentLoaded", function () {
     const scrollToTopButton = document.getElementById("scroll-to-top");
