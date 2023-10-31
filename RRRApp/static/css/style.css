@@ -14,6 +14,7 @@
     --font-color: #D3D3D3;
     --hover-color: #d3d3d3;
     --contactOrJoin: #d3d3d3;
+    --arrowColor: #d3d3d3;
 }
 :root.light-mode {
     --background-color:  #D3D3D3;
@@ -22,7 +23,7 @@
     --background-color-event: #A0A0A0; 
     --background-color-date: #CF291D; 
     --font-color: black;
-    --contactOrJoin: black;
+    --arrowColor: #902c25;
 }
 
 :root.dark-mode{
@@ -32,7 +33,7 @@
     --background-color-event: #797979c3; 
     --background-color-date: #CF291D; 
     --font-color: #D3D3D3;
-    --contactOrJoin: #d3d3d3;
+    --arrowColor: #222222;
 }
 
 * {
@@ -544,6 +545,16 @@ main{
 }
 }
 
+#prevEvent, #nextEvent{
+    padding-left: 30px;
+    padding-right: 30px;
+    color: var(--font-color);
+}
+
+.event-navigation path:hover{
+    fill: var(--arrowColor);
+}
+
 /*-----------------END OF CALENDAR----------------------*/
 /*-----------------START OF FOOTER----------------------*/
 .footerText{
@@ -694,7 +705,7 @@ footer a{
 } 
 
 .parallax-container2{
-    background-image: url('/static/members/everyone.png');
+    background-image: url('/static/members/everyone.webp');
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -706,7 +717,7 @@ footer a{
 }
 
 .parallax-container4{
-    background-image: url('/static/members/exec.png');
+    background-image: url('/static/members/exec.webp');
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -715,6 +726,12 @@ footer a{
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+}
+
+.officers,
+.seniorDesign,
+.assistants{
+    max-width: 95%;
 }
 
 .sectionTitle{

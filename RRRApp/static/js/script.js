@@ -260,3 +260,6 @@ window.addEventListener('scroll', function () {
     }
 });
 
+//-------------------------Next/Previous Button--------
+
+
