@@ -63,19 +63,19 @@ function updateMainPadding() {
     } 
 
     if (viewportWidth <= 890 && viewportWidth > 745){
-        logo.style.width = '40px';
+        // logo.style.width = '75%'; Commenting these out, but these change the size of the logo based on the screen size
         navMain.style.display = 'flex';
         altNav.style.display = 'none';
         logoCon.style.padding = '0px';
     }
     else if(viewportWidth <= 745 ){
-        logo.style.width = '40px';
+        // logo.style.width = '75%'; Commenting these out, but these change the size of the logo based on the screen size
         logoCon.style.padding = '0px'
         navMain.style.display = 'none';
         altNav.style.display = 'flex';
     }
     else{
-        logo.style.width = '100px';
+        // logo.style.width = '100%'; Commenting these out, but these change the size of the logo based on the screen size
         navMain.style.display = 'flex';
         altNav.style.display = 'none';
         logoCon.style.padding = '10px';
@@ -114,24 +114,24 @@ document.addEventListener("click", function(event) {
 // Function to toggle the display of the dropdown content
 function toggleMenu() {
     const menu = document.querySelector(".dropdown-content");
-    const menuCon = document.querySelector(".dropdown");
-    const menuButton = document.querySelector(".menuButton");
+    // const menuCon = document.querySelector(".dropdown"); not needed
+    const menuButton = document.querySelector(".mobile-menu-button");
     const header = document.getElementById("mainHeader");
     const logo = document.querySelector(".logo");
 
-    if (menu.style.display === "block") {
+    if (menu.style.display === "flex") {
         // Close the menu
         menu.style.display = "none";
-        menuButton.style.position = "relative";
+        menuButton.style.position = "absolute"; // this makes it so it can be seen
         menuButton.style.top = "";
         menuButton.innerHTML = "&#9776;";
         menuButton.style.marginLeft = "0px";
-        menuButton.style.marginTop = "0px";
+        menuButton.style.top = "0px"; // Changed this for positioning
         header.style.height = "";
         logo.style.display = 'block';
-        menuCon.style.top = "";
-        menuCon.style.left = "";
-        menuCon.style.right = "";
+        // menuCon.style.top = "";
+        // menuCon.style.left = "";
+        // menuCon.style.right = "";
 
         // Enable scrolling
         enableScrolling();
@@ -139,20 +139,67 @@ function toggleMenu() {
         // Open the menu
         menuButton.style.position = "absolute";
         menuButton.style.top = "45px";
-        menu.style.display = "block";
+        menu.style.display = "flex";
         menuButton.innerHTML = "&#10006;";
-        menuButton.style.marginLeft = "200px";
-        menuButton.style.marginTop = "-120px";
+        menuButton.style.right = "25px"; // this is where the placement of the menu button goes
         header.style.height = "100%";
         logo.style.display = 'none';
-        menuCon.style.top = "100px";
-        menuCon.style.left = "0";
-        menuCon.style.right = "0";
+        // menuCon.style.top = "100px";
+        // menuCon.style.left = "0";
+        // menuCon.style.right = "0";
 
         // Disable scrolling
         disableScrolling();
     }
 }
+
+// For reference, this is my toggleMenu function:
+// function toggleMenu() {
+//     const menu = document.querySelector(".dropdown-content");
+//     const menuCon = document.querySelector(".dropdown");
+//     const menuButton = document.querySelector(".menuButton");
+//     const header = document.querySelector('header');
+//     const logo = document.querySelector(".logo");
+
+//     if (menu.style.display === "flex") {
+//         // Close the menu
+//         header.style.backgroundColor = "";
+//         header.style.boxShadow = "";
+//         menu.style.display = "none";
+//         menuButton.style.position = "relative";
+//         menuButton.style.top = "";
+//         menuButton.innerHTML = "&#9776;";
+//         menuButton.style.right = "";
+//         menuButton.style.marginTop = "0px";
+//         header.style.height = "";
+//         logo.style.display = 'flex';
+//         menuCon.style.top = "";
+//         menuCon.style.left = "";
+//         menuCon.style.right = "";
+
+//         enableScrolling();
+//     } 
+//     else {
+//         // Open the menu
+//         header.style.backgroundColor = "var(--primary-faded-color)";
+//         header.style.boxShadow = "var(--shadow)";
+//         menuButton.style.position = "relative";
+//         menuButton.style.top = "30px";
+//         menu.style.display = "flex";
+//         menuButton.innerHTML = "&#x2715;";
+//         menuButton.style.right = "-40%";
+//         menuButton.style.marginTop = "-100px";
+//         header.style.height = "100%";
+//         logo.style.display = 'none';
+//         menuCon.style.top = "100px";
+//         menuCon.style.left = "0";
+//         menuCon.style.right = "0";
+
+//         disableScrolling();
+//     }
+//     document.body.style.left = '0px';
+//     document.body.style.right = '0px';
+// }
 
 // Function to disable scrolling
 function disableScrolling() {

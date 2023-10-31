@@ -95,9 +95,14 @@ header.team{
 }
 
 .logo-image {
-    width: 140px; /* Adjust the logo's width */
+    /* The width isn't needed at the moment */
+    /* width: 140px; Adjust the logo's width */
     aspect-ratio: 1;
     overflow: visible;
+}
+
+.logo-image img{
+    width: 100%; /* This makes it so the logo is responsive based on the size of the parent div */
 }
 
 @media (max-width: 600px) {
@@ -123,6 +128,19 @@ header.team{
     margin: -10px 40px 60px 0px;
 }
 
+/* Adding all this for mobile visibility */
+.altNav button{
+    font-size: 40px;
+}
+
+.altNav{
+    overflow: visible;
+}
+
+.altNav *{
+    overflow: visible;
+}
+
 /* Style for the dropdown menu */
 .dropdown {
     display: none;
@@ -135,12 +153,13 @@ header.team{
 }
 
 .dropdown-content {
-    display: flex;
+    display: none; /* Hides the menu when not active */
     flex-direction: column;
     position: relative;
     align-items: center;
     justify-content: center;
-    width: 100%;
+     width: 100vw; /* Takes up the full width */
+    height: 100vw; /* Takes up the full height */
     padding: 8px;
     text-align: center;
 }
