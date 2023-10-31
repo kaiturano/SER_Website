@@ -128,6 +128,10 @@ header.team{
     margin: -10px 40px 60px 0px;
 }
 
+.mobile-menu-button{
+    color: var(--font-color);
+}
+
 /* Adding all this for mobile visibility */
 .altNav button{
     font-size: 40px;
@@ -158,7 +162,7 @@ header.team{
     position: relative;
     align-items: center;
     justify-content: center;
-     width: 100vw; /* Takes up the full width */
+    width: 100vw; /* Takes up the full width */
     height: 100vw; /* Takes up the full height */
     padding: 8px;
     text-align: center;
@@ -270,6 +274,7 @@ main{
     text-align: left; 
     font-size: 30px;
     margin-top: -20px;
+    overflow: visible;
 }
 
 .auto-typed{
@@ -724,7 +729,7 @@ footer a{
 } 
 
 .parallax-container2{
-    background-image: url('/static/members/everyone.webp');
+    background-image: url('/static/members/80per/everyone-min.jpg');
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -736,7 +741,7 @@ footer a{
 }
 
 .parallax-container4{
-    background-image: url('/static/members/exec.webp');
+    background-image: url('/static/members/80per/exec-min.jpg');
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -747,11 +752,11 @@ footer a{
     justify-content: center;
 }
 
-.officers,
+/* .officers,
 .seniorDesign,
 .assistants{
     max-width: 95%;
-}
+} */
 
 .sectionTitle{
     font-family:'Lucida Sans';
@@ -797,6 +802,30 @@ footer a{
     height: 367px; /* Adjust the height as needed to match the circular placeholder */
     aspect-ratio: 1;
     border-radius: 20px; /* Set border-radius to 50% for a circular shape */
+}
+
+@media (max-width: 500px) {
+    .memberIMG.small{
+        display: block;
+    }
+    .parallax-container2{
+        display: none;
+    }
+    .parallax-container4{
+        display: none;
+    }
+    .memberIMG.large{
+        display: none;
+    }
+}
+
+@media (min-width: 501px) {
+    .memberIMG.small{
+        display: none;
+    }
+    .memberIMG.large{
+        display: block;
+    }
 }
 
 .memberName{
@@ -961,9 +990,7 @@ svg path{
     transform: rotateZ(45deg);
     scale: 1.1;
     animation: spin infinite 12s linear;
-    @media (max-width: 850px) {
-        height: 100vh;
-    }
+    height: 100vh;
     @media (max-width: 400px) {
         height: 140vh;
         top: -200px;

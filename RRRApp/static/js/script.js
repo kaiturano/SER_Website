@@ -113,6 +113,7 @@ document.addEventListener("click", function(event) {
 
 // Function to toggle the display of the dropdown content
 function toggleMenu() {
+    const sideMenu = document.querySelector(".sideMenu");
     const menu = document.querySelector(".dropdown-content");
     // const menuCon = document.querySelector(".dropdown"); not needed
     const menuButton = document.querySelector(".mobile-menu-button");
@@ -129,6 +130,7 @@ function toggleMenu() {
         menuButton.style.top = "0px"; // Changed this for positioning
         header.style.height = "";
         logo.style.display = 'block';
+        sideMenu.style.display = 'flex';
         // menuCon.style.top = "";
         // menuCon.style.left = "";
         // menuCon.style.right = "";
@@ -140,10 +142,11 @@ function toggleMenu() {
         menuButton.style.position = "absolute";
         menuButton.style.top = "45px";
         menu.style.display = "flex";
-        menuButton.innerHTML = "&#10006;";
+        menuButton.innerHTML = "&#x2715;";
         menuButton.style.right = "25px"; // this is where the placement of the menu button goes
         header.style.height = "100%";
         logo.style.display = 'none';
+        sideMenu.style.display = 'none';
         // menuCon.style.top = "100px";
         // menuCon.style.left = "0";
         // menuCon.style.right = "0";
@@ -295,7 +298,7 @@ window.addEventListener('scroll', function () {
     // ------------ transparent top stuff------------
     const navElement = document.querySelector('header.team'); // Check if scroll position is at the top of the page (scrollY is zero)
     if(navElement){
-        if (scrollY === 0 && document.body.style.top >= 0) {
+        if (scrollY <= 0 && document.body.style.top >= 0 && navElement) {
             // Scroll is at the top, make the header clear and remove box shadow
             navElement.style.backgroundColor = "transparent";
             navElement.style.boxShadow = "none";
