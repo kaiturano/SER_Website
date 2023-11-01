@@ -127,7 +127,7 @@ function toggleMenu() {
         menuButton.style.top = "";
         menuButton.innerHTML = "&#9776;";
         menuButton.style.marginLeft = "0px";
-        menuButton.style.top = "0px"; // Changed this for positioning
+        menuButton.style.top = "25px"; // Changed this for positioning
         header.style.height = "";
         logo.style.display = 'block';
         sideMenu.style.display = 'flex';
@@ -317,7 +317,7 @@ window.addEventListener('scroll', function () {
     // ------------ transparent top stuff------------
     const navElement = document.querySelector('header.team'); // Check if scroll position is at the top of the page (scrollY is zero)
     if(navElement){
-        if (scrollY <= 0 && document.body.style.top >= 0 && navElement) {
+        if (scrollY <= 0 && document.body.style.top >= 0 && navElement && window.innerWidth>500) {
             // Scroll is at the top, make the header clear and remove box shadow
             navElement.style.backgroundColor = "transparent";
             navElement.style.boxShadow = "none";

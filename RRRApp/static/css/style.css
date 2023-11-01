@@ -30,7 +30,7 @@
     --background-color: rgba(0, 0, 0, 0.815);
     --background-color-header: #902c25;
     --background-color-about: #902c25;
-    --background-color-event: #797979c3; 
+    --background-color-event: #797979; 
     --background-color-date: #CF291D; 
     --font-color: #D3D3D3;
     --arrowColor: #222222;
@@ -130,6 +130,9 @@ header.team{
 
 .mobile-menu-button{
     color: var(--font-color);
+    position: absolute;
+    top: 25px;
+    right: 10px;
 }
 
 /* Adding all this for mobile visibility */
@@ -399,6 +402,11 @@ main{
     }
 }
 
+.sectionTitle{
+    margin: 30px auto 10px auto;
+    text-align: center;
+}
+
 .about{
     max-width: 90%;
     margin: 0 auto;
@@ -523,7 +531,6 @@ main{
 .event .event-right h3.event-title {
     font-size: 18px;
     margin: 5px 0 0 0;
-    color: var(--font-color);
     text-transform: uppercase;
     padding: 0;
 }
@@ -547,10 +554,10 @@ main{
     padding-right: 8px;
 }
 
-@media (max-width: 550px) {
+/* @media (max-width: 550px) {
 .event {
     flex-direction: column;
-}
+} */
 
 .event .event-left {
     padding: 0;
@@ -567,7 +574,7 @@ main{
 .event .event-left .event-date {
     padding: 10px 0;
 }
-}
+
 
 #prevEvent, #nextEvent{
     padding-left: 30px;
@@ -697,6 +704,7 @@ footer a{
     transform: scale(1) rotate(360deg);
 }
 /*-----------------------------END OF HOME PAGE || START OF TEAM-----------------------*/
+
 .coverIMGTeam {
     height: 100px;
     text-align: center;
@@ -752,11 +760,9 @@ footer a{
     justify-content: center;
 }
 
-/* .officers,
-.seniorDesign,
 .assistants{
-    max-width: 95%;
-} */
+    padding-bottom: 30px;
+}
 
 .sectionTitle{
     font-family:'Lucida Sans';
@@ -808,6 +814,20 @@ footer a{
     .memberIMG.small{
         display: block;
     }
+    .mobileGap{
+        height: auto;
+        display: flex;
+        text-align: center;
+        padding-top: 120px;
+        margin: 0px;
+        max-width: 95%;
+    }
+    header.team{
+        background-color: var(--background-color-header);
+    }
+    .mobileFont{
+        font-family:'Lucida Sans';
+    }
     .parallax-container2{
         display: none;
     }
@@ -825,6 +845,9 @@ footer a{
     }
     .memberIMG.large{
         display: block;
+    }
+    .mobileGap{
+        display: none;
     }
 }
 
@@ -850,6 +873,7 @@ footer a{
 }
 
 .linkedin-link {
+    padding-top: 10px;
     text-decoration: none;
     display: inline-block;
     position: relative;
@@ -1028,6 +1052,7 @@ svg path{
     font-size: 25px;
     margin-top: -30px;
     color: var(--white);
+    max-width: 95%  ;
 }
 
 .reach-out {

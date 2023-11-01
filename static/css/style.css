@@ -12,8 +12,9 @@
     --background-color-event: #797979c3; 
     --background-color-date: #CF291D; 
     --font-color: #D3D3D3;
-    /* --hover-color: black; */
     --hover-color: #d3d3d3;
+    --contactOrJoin: #d3d3d3;
+    --arrowColor: #d3d3d3;
 }
 :root.light-mode {
     --background-color:  #D3D3D3;
@@ -22,15 +23,17 @@
     --background-color-event: #A0A0A0; 
     --background-color-date: #CF291D; 
     --font-color: black;
+    --arrowColor: #902c25;
 }
 
 :root.dark-mode{
     --background-color: rgba(0, 0, 0, 0.815);
     --background-color-header: #902c25;
     --background-color-about: #902c25;
-    --background-color-event: #797979c3; 
+    --background-color-event: #797979; 
     --background-color-date: #CF291D; 
     --font-color: #D3D3D3;
+    --arrowColor: #222222;
 }
 
 * {
@@ -92,9 +95,14 @@ header.team{
 }
 
 .logo-image {
-    width: 140px; /* Adjust the logo's width */
+    /* The width isn't needed at the moment */
+    /* width: 140px; Adjust the logo's width */
     aspect-ratio: 1;
     overflow: visible;
+}
+
+.logo-image img{
+    width: 100%; /* This makes it so the logo is responsive based on the size of the parent div */
 }
 
 @media (max-width: 600px) {
@@ -120,6 +128,26 @@ header.team{
     margin: -10px 40px 60px 0px;
 }
 
+.mobile-menu-button{
+    color: var(--font-color);
+    position: absolute;
+    top: 25px;
+    right: 10px;
+}
+
+/* Adding all this for mobile visibility */
+.altNav button{
+    font-size: 40px;
+}
+
+.altNav{
+    overflow: visible;
+}
+
+.altNav *{
+    overflow: visible;
+}
+
 /* Style for the dropdown menu */
 .dropdown {
     display: none;
@@ -132,12 +160,13 @@ header.team{
 }
 
 .dropdown-content {
-    display: flex;
+    display: none; /* Hides the menu when not active */
     flex-direction: column;
     position: relative;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 100vw; /* Takes up the full width */
+    height: 100vw; /* Takes up the full height */
     padding: 8px;
     text-align: center;
 }
@@ -185,7 +214,6 @@ main{
     margin: auto;
     width: 100%;
     overflow-x: visible;
-    padding-bottom: 30px;
 }
 
 .coverIMG {
@@ -216,7 +244,7 @@ main{
     overflow-y: hidden;
     display: flex; /* Use flexbox for side-by-side layout */
     flex-direction: row;
-    @media (max-width: 768px) {
+    @media (max-width: 820px) {
         flex-direction: column; /* Stack vertically on small screens */
     }
 }
@@ -229,11 +257,14 @@ main{
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-    @media (max-width: 768px) {
-        flex: none; /* Reset flex property */
+    overflow: visible;
+    @media (max-width: 820px) {
+        flex:auto; /* Reset flex property */
         width: 100%; /* Take full width on small screens */
         height: auto;
-        padding-top: 40px;
+        align-items: center;
+        padding-top: 60px;
+        
     }
 }
 
@@ -246,6 +277,7 @@ main{
     text-align: left; 
     font-size: 30px;
     margin-top: -20px;
+    overflow: visible;
 }
 
 .auto-typed{
@@ -258,12 +290,19 @@ main{
     font-size: 70px;
     margin-top: 20px;
     margin-bottom: -20px;
+    @media (max-width: 768px) {
+        padding-top: 20px;
+    }
 }
 
 .welcomeTitleCont {
     text-align: left; 
+    height: 80px;
     font-size: 30px;
     margin: 0;
+    @media (max-width: 820px) {
+        text-align: center;
+    }
 }
 
 .welcome_subtext{
@@ -281,12 +320,12 @@ main{
     flex-direction: column; /* Center contents vertically and horizontally */
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow: visible;
     @media (max-width: 768px) {
         flex: none; /* Reset flex property */
         width: 100%; /* Take full width on small screens */
-        height: auto;
-        padding-top: 40px;
+        height: 500px;
+        padding-top: 70px;
     }
 }
 
@@ -296,6 +335,9 @@ main{
     align-items: center;
     width: 100%; /* Increase the width to make it larger */
     transform: scale(1.4);
+    @media (max-width: 370px) {
+        display: none;
+    }
 }
 
 .planet{
@@ -309,6 +351,9 @@ main{
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    @media (max-width: 820px) {
+        display: none;
+    }
 }
 
 .astronaut {
@@ -323,6 +368,9 @@ main{
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    @media (max-width: 820px) {
+        padding-top: 27px;
+    }
 }
 
 .rocket {
@@ -339,6 +387,9 @@ main{
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    @media (max-width: 820px) {
+        display: none;
+    }
 }
 
 
@@ -349,6 +400,11 @@ main{
     100% {
         transform: translateY(-20px); /* Adjust the value to control the floating height */
     }
+}
+
+.sectionTitle{
+    margin: 30px auto 10px auto;
+    text-align: center;
 }
 
 .about{
@@ -364,6 +420,7 @@ main{
     border-style: solid;
     border-color: #222222;
     border-width: 2px;
+    margin-bottom: 25px;
 }
 
 .benefits{
@@ -474,7 +531,6 @@ main{
 .event .event-right h3.event-title {
     font-size: 18px;
     margin: 5px 0 0 0;
-    color: var(--font-color);
     text-transform: uppercase;
     padding: 0;
 }
@@ -498,10 +554,10 @@ main{
     padding-right: 8px;
 }
 
-@media (max-width: 550px) {
+/* @media (max-width: 550px) {
 .event {
     flex-direction: column;
-}
+} */
 
 .event .event-left {
     padding: 0;
@@ -518,6 +574,16 @@ main{
 .event .event-left .event-date {
     padding: 10px 0;
 }
+
+
+#prevEvent, #nextEvent{
+    padding-left: 30px;
+    padding-right: 30px;
+    color: var(--font-color);
+}
+
+.event-navigation path:hover{
+    fill: var(--arrowColor);
 }
 
 /*-----------------END OF CALENDAR----------------------*/
@@ -638,6 +704,7 @@ footer a{
     transform: scale(1) rotate(360deg);
 }
 /*-----------------------------END OF HOME PAGE || START OF TEAM-----------------------*/
+
 .coverIMGTeam {
     height: 100px;
     text-align: center;
@@ -670,7 +737,7 @@ footer a{
 } 
 
 .parallax-container2{
-    background-image: url('/static/members/everyone.png');
+    background-image: url('/static/members/80per/everyone-min.jpg');
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -682,7 +749,7 @@ footer a{
 }
 
 .parallax-container4{
-    background-image: url('/static/members/exec.png');
+    background-image: url('/static/members/80per/exec-min.jpg');
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -691,6 +758,10 @@ footer a{
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+}
+
+.assistants{
+    padding-bottom: 30px;
 }
 
 .sectionTitle{
@@ -739,6 +810,47 @@ footer a{
     border-radius: 20px; /* Set border-radius to 50% for a circular shape */
 }
 
+@media (max-width: 500px) {
+    .memberIMG.small{
+        display: block;
+    }
+    .mobileGap{
+        height: auto;
+        display: flex;
+        text-align: center;
+        padding-top: 120px;
+        margin: 0px;
+        max-width: 95%;
+    }
+    header.team{
+        background-color: var(--background-color-header);
+    }
+    .mobileFont{
+        font-family:'Lucida Sans';
+    }
+    .parallax-container2{
+        display: none;
+    }
+    .parallax-container4{
+        display: none;
+    }
+    .memberIMG.large{
+        display: none;
+    }
+}
+
+@media (min-width: 501px) {
+    .memberIMG.small{
+        display: none;
+    }
+    .memberIMG.large{
+        display: block;
+    }
+    .mobileGap{
+        display: none;
+    }
+}
+
 .memberName{
     margin: 0px;
     font-size: 22px;
@@ -761,6 +873,7 @@ footer a{
 }
 
 .linkedin-link {
+    padding-top: 10px;
     text-decoration: none;
     display: inline-block;
     position: relative;
@@ -771,7 +884,7 @@ footer a{
     position: relative;
 }
 
-svg path:hover{
+.linkedin-button path:hover{
     fill: var(--background-color);
 }
 
@@ -881,54 +994,97 @@ svg path{
 /*---------------------------------CONTACT US----------------------*/
 .coverIMGContact {
     width: 100%;
-    height: 700px;
+    height: auto;
     position: relative;
     overflow-y: hidden;
     display: flex; /* Use flexbox for side-by-side layout */
-    flex-direction: row;
+    flex-direction: row-reverse;
     @media (max-width: 768px) {
         flex-direction: column; /* Stack vertically on small screens */
-        height: auto;
+        height: 100%;
         margin-top: 40px;
+        width: 100%;
+    }
+}
+
+.blobContact{
+    top: 50px;
+    position: absolute; 
+    z-index: -1;
+    transform: rotateZ(45deg);
+    scale: 1.1;
+    animation: spin infinite 12s linear;
+    height: 100vh;
+    @media (max-width: 400px) {
+        height: 140vh;
+        top: -200px;
+    }
+}
+
+@keyframes spin {
+    0%{
+        transform: rotate(0deg);
+        scale: 1;
+    }
+    50%{
+        scale: 1.3;
+    }
+    100%{
+        transform: rotate(360deg);
+        scale: 1;
     }
 }
 
 .contactTitle {
     text-align: center; 
-    font-size: 70px;
     font-size: 55px;
+    color: var(--white);
+    @media (max-width: 850px) {
+        margin-top: 15%;
+        align-items: center;
+        justify-content: center;
+        color: var(--white);
+    }
 }
 
 .contactTitleCont {
     text-align: center; 
     font-size: 25px;
     margin-top: -30px;
+    color: var(--white);
+    max-width: 95%  ;
 }
 
 .reach-out {
     flex: 1; /* Take 50% of the available width */
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     max-width: 45%;
     @media (max-width: 768px) {
-        flex: none; /* Reset flex property */
+        flex: auto; /* Reset flex property */
         max-width: 100%; /* Take full width on small screens */
-        height: 50%;
+        height: 100%;
         padding-top: 40px;
     }
 }
 
 .hero{
     flex: 1;
-    margin-top: 35px;
+    padding-top: 35px;
     width: 100%;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    @media (max-width: 768px) {
+        flex: 1; /* Reset flex property */
+        max-width: 100%; /* Take full width on small screens */
+        height: 50%;
+        padding-top: 40px;
+    }
 }
 
 form{
@@ -936,8 +1092,10 @@ form{
     color: var(--font-color);
     font-size: 18px;
     width: 700px;
-    height: 400px;
+    height: 450px;
     margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 10px;
     padding: 30px;
     border-radius: 20px;
     box-shadow: var(--shadow);
@@ -968,6 +1126,8 @@ form input, textarea{
     border-bottom: 1px solid black;
     outline: none;
     border-radius: 5px;
+    background-color: var(--white);
+    cursor: text;
 }
 
 #input-field{
@@ -989,8 +1149,65 @@ form input, textarea{
 .send-btn{
     width: 100px;
     border: none;
-    background-color: white;
+    background-color: var(--white);
     color: black;
     padding: 6px 0;
     border-radius: 20px;
+}
+
+/*----------------JOIN--------------------*/
+.coverIMGJoin {
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow-y: hidden;
+    display: flex; /* Use flexbox for side-by-side layout */
+    flex-direction: row;
+    @media (max-width: 768px) {
+        flex-direction: column; /* Stack vertically on small screens */
+        /* height: 100%; */
+        margin-top: 40px;
+        width: 100%;
+    }
+}
+
+.joinBelow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.joinInstruction{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -8px;
+}
+
+.joinForm{
+    background-color: var(--background-color-about);
+    color: var(--font-color);
+    font-size: 18px;
+    width: 700px;
+    margin-top: 40px;
+    height: 520px;
+    margin-right: 20px;
+    margin-left: 20px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    border-style: solid;
+    border-color: #222222;
+    border-width: 2px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.submitBtn2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -12px;
 }
