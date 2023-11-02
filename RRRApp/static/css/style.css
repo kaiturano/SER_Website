@@ -6,16 +6,16 @@
     --white: #D3D3D3;
     --shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     --imagePlaceholder: #222222;
-    --background-color: rgba(0, 0, 0, 0.815);
-    --background-color-header: #902c25;
-    --background-color-about: #902c25;
-    --background-color-event: #797979c3; 
-    --background-color-date: #CF291D; 
-    --font-color: #D3D3D3;
     --hover-color: #d3d3d3;
     --contactOrJoin: #d3d3d3;
-    --arrowColor: #d3d3d3;
     --logoBack: #d3d3d3;
+    --background-color:  #D3D3D3;
+    --background-color-header: #CF291D;
+    --background-color-about: #cd8173;
+    --background-color-event: #A0A0A0; 
+    --background-color-date: #CF291D; 
+    --font-color: black;
+    --arrowColor: #902c25;
 }
 :root.light-mode {
     --background-color:  #D3D3D3;
@@ -98,8 +98,6 @@ header.team{
 }
 
 .logo-image {
-    /* The width isn't needed at the moment */
-    /* width: 140px; Adjust the logo's width */
     aspect-ratio: 1;
     overflow: visible;
 }
@@ -532,8 +530,6 @@ main{
 }
 
 .arrow path:hover{
-    /* fill: var(--hover-color);
-    transition: ease 0.2s; */
     cursor: default;
 }
 
@@ -1237,7 +1233,7 @@ form{
     color: var(--font-color);
     font-size: 18px;
     width: 700px;
-    height: 450px;
+    /* height: 450px; */
     margin-right: 20px;
     margin-left: 20px;
     margin-bottom: 10px;
@@ -1299,6 +1295,11 @@ form input, textarea{
     border-radius: 20px;
     cursor: default;
     /* box-shadow: none; */
+}
+
+.send-btn:hover{
+    background-color: var(--light-grey);
+    transform: ease 0.2s;
 }
 
 /*----------------JOIN--------------------*/
