@@ -59,105 +59,112 @@
         <div class="benefits">
             <div class="benefit flip-card">
                 <div class="benefitDes">
-                    <h1 class="calendarIntro">Event Calendar</h1>
+                    <h1 class="picIntro">Events</h1>
                     <hr class="underline">
-                    <!-- Event One -->
-                    <div class="event">
-                        <div class="event-left">
-                            <div class="event-date">
-                                <div class="date">27</div>
-                                <div class="month">Sep</div>
-                                <div class="year">2023</div>
-                            </div>
+                    <div class="carousel">
+                        <div class="newsIntro">
+                            <h1 class="calendarIntro">Event Calendar</h1>
+                            <hr class="underline">
                         </div>
+                        <div class="slider">
+                            <!-- Event One -->
+                            <div class="event">
+                                <div class="event-left">
+                                    <div class="event-date">
+                                        <div class="date">27</div>
+                                        <div class="month">Sep</div>
+                                        <div class="year">2023</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="event-right">
+                                    <h3 class="event-title">Student Talk</h3>
+                                    
+                                    <div class="event-description">
+                                    Engage With Students
+                                    </div>
+    
+                                    <div class="event-location">
+                                        <img src="{% static 'icons/location.png' %}" alt="" /> Lubbock Cooper HS
+                                    </div>
                         
-                        <div class="event-right">
-                            <h3 class="event-title">Student Talk</h3>
-                            
-                            <div class="event-description">
-                            Engage With Students
+                                    <div class="event-timing">
+                                        <img src="{% static 'icons/time.png' %}" alt="" /> 8:00 am
+                                    </div>
+    
+                                </div>
                             </div>
-
-                            <div class="event-location">
-                                <img src="{% static 'icons/location.png' %}" alt="" /> Lubbock Cooper HS
+                            <!-- Event Two -->
+                            <div class="event">
+                                <div class="event-left">
+                                    <div class="event-date">
+                                        <div class="date">07</div>
+                                        <div class="month">Oct</div>
+                                        <div class="year">2023</div>
+                                    </div>
+                                </div>
+                        
+                                <div class="event-right">
+                                    <h3 class="event-title">Tech Saavy</h3>
+                        
+                                    <div class="event-description">
+                                        Hands-On Table Event
+                                    </div>
+    
+                                    <div class="event-location">
+                                        <img src="{% static 'icons/location.png' %}" alt="" /> TTU SUB
+                                    </div>
+                        
+                                    <div class="event-timing">
+                                        <img src="{% static 'icons/time.png' %}" alt="" /> 9:45 am
+                                    </div>
+    
+                                </div>
                             </div>
-                
-                            <div class="event-timing">
-                                <img src="{% static 'icons/time.png' %}" alt="" /> 8:00 am
-                            </div>
-
-                        </div>
-                    </div>
-                    <!-- Event Two -->
-                    <div class="event">
-                        <div class="event-left">
-                            <div class="event-date">
-                                <div class="date">07</div>
-                                <div class="month">Oct</div>
-                                <div class="year">2023</div>
-                            </div>
-                        </div>
-                
-                        <div class="event-right">
-                            <h3 class="event-title">Tech Saavy</h3>
-                
-                            <div class="event-description">
-                                Hands-On Table Event
-                            </div>
-
-                            <div class="event-location">
-                                <img src="{% static 'icons/location.png' %}" alt="" /> TTU SUB
-                            </div>
-                
-                            <div class="event-timing">
-                                <img src="{% static 'icons/time.png' %}" alt="" /> 9:45 am
-                            </div>
-
-                        </div>
-                    </div>
-                    <!--Event Three-->
-                    <div class="event">
-                        <div class="event-left">
-                            <div class="event-date">
-                                <div class="date">13</div>
-                                <div class="month">Nov</div>
-                                <div class="year">2023</div>
-                            </div>
-                        </div>
-                
-                        <div class="event-right">
-                            <h3 class="event-title">Family STEM Night</h3>
-                
-                            <div class="event-description">
-                                Hands-On Table Event
-                            </div>
-
-                            <div class="event-location">
-                                <img src="{% static 'icons/location.png' %}" alt="" /> TTU SUB
-                            </div>
-                
-                            <div class="event-timing">
-                                <img src="{% static 'icons/time.png' %}" alt="" /> 4:00 pm
+                            <!--Event Three-->
+                            <div class="event">
+                                <div class="event-left">
+                                    <div class="event-date">
+                                        <div class="date">13</div>
+                                        <div class="month">Nov</div>
+                                        <div class="year">2023</div>
+                                    </div>
+                                </div>
+                        
+                                <div class="event-right">
+                                    <h3 class="event-title">Family STEM Night</h3>
+                        
+                                    <div class="event-description">
+                                        Hands-On Table Event
+                                    </div>
+    
+                                    <div class="event-location">
+                                        <img src="{% static 'icons/location.png' %}" alt="" /> TTU SUB
+                                    </div>
+                        
+                                    <div class="event-timing">
+                                        <img src="{% static 'icons/time.png' %}" alt="" /> 4:00 pm
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="event-navigation">
-                        <button id="prevEvent">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet">
-                                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
-                            </svg>
-                        </button>
-                        <button id="nextEvent">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
-                                <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
-                            </svg>
-                        </button>
+                        <div class="controls">
+                            <span class="arrow prev">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet">
+                                    <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+                                </svg>
+                            </span>
+                            <span class="arrow next">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                                </svg>
+                            </span>
+                        </div>
                     </div>
                 </div>
                 <!-- Event Three -->
-                
             </div>
-            <div class="benefit flip-card" onclick="toggleFlip(this)">
+            <div class="benefit flip-card">
                 <!-- <div class="benefitTitle">
                     <h1>Pictures</h1>
                 </div> -->
@@ -166,7 +173,7 @@
                     <hr class="underline">
                 </div>
             </div>
-            <div class="benefit flip-card" onclick="toggleFlip(this)">
+            <div class="benefit flip-card">
                 <!-- <div class="benefitTitle">
                     <h1>News</h1>
                 </div> -->
