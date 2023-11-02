@@ -335,7 +335,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const slider = document.querySelector('.slider');
     const prev = document.querySelector('.prev');
     const next = document.querySelector('.next');
-    const carousel = document.querySelector('.carousel')
+    const carousel = document.querySelector('.carousel');
 
     var direction;
 
@@ -361,18 +361,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if(slider){
         slider.addEventListener('transitionend', function() {
-            if (direction === -1){
-                slider.appendChild(slider.firstElementChild);
-            } else if (direction === 1){
-                slider.prepend(slider.lastElementChild);
+            if(slider.style.transform === 'translate(-33%)' || slider.style.transform === 'translate(33%)'){
+                if (direction === -1){
+                    slider.appendChild(slider.firstElementChild);
+                } else if (direction === 1){
+                    slider.prepend(slider.lastElementChild);
+                }
+                
+        
+                slider.style.transition = 'none';
+                slider.style.transform = 'translate(0)';
+                setTimeout(function() {
+                    slider.style.transition = 'all 0.5s';
+                });
             }
-            
-    
-            slider.style.transition = 'none';
-            slider.style.transform = 'translate(0)';
-            setTimeout(function() {
-                slider.style.transition = 'all 0.5s';
-            });
         });
     }
 });
