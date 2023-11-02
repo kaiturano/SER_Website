@@ -444,6 +444,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: visible;
     position: relative;
     perspective: 1000px; /* Set the perspective for 3D effect */
     padding: 20px;
@@ -479,8 +480,15 @@ main{
     border-style: solid;
     border-color: #222222;
     border-width: 2px;
+    overflow: visible;
 }
 
+.picSlide{
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
 
 .carousel{
     display: flex;
@@ -513,6 +521,7 @@ main{
     margin: 20px 20px;
     justify-content: center;
     height: 225px;
+    width: 335px;
 }
 
 
@@ -596,6 +605,10 @@ main{
     align-items: center;
 }
 
+.location{
+    text-decoration: none;
+}
+
 .event .event-right h3.event-title {
     font-size: 18px;
     margin: 5px 0 0 0;
@@ -617,6 +630,10 @@ main{
     font-size: 14px;
 }
 
+.event .event-right .event-location{
+    cursor: default;
+}
+
 .event .event-right .event-timing img {
     height: 20px;
     padding-right: 8px;
@@ -632,8 +649,58 @@ main{
 .event .event-left .event-date {
     padding: 10px 0;
 }
-
 /*-----------------END OF CALENDAR----------------------*/
+.news{
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px;
+    border: solid 3px black;
+    justify-content: center;
+    box-shadow: var(--shadow);
+    height: 225px;
+    margin-top: 32px;
+    color: black;
+}
+
+.trophy{
+    flex: 1;
+    display: flex;
+    background-color: var(--dark-red);
+    max-width: 35%;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+}
+
+.trophTitle{
+    margin-top: 30px;
+    margin-bottom: 5px;
+    @media (max-width: 500px){
+        margin-top: 10px;
+        margin-bottom: 1px;
+    }
+}
+
+.newsLink{
+    flex: 1;
+    background-color: var(--white);
+    
+    overflow: hidden;
+}
+
+.clickForNews{
+    margin: 15px;
+    cursor: default;
+}
+
+.newsBtn{
+    cursor: default;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    text-decoration:underline;
+}
 /*-----------------START OF FOOTER----------------------*/
 .footerText{
     margin: 0;
@@ -945,7 +1012,6 @@ svg path{
     padding-bottom: 0px;
     position: relative; 
     overflow: visible;
-    /* margin-top: 75px; */
     padding-top: 50px;
     @media (max-width: 500px){
         padding-top: 50px;
@@ -997,17 +1063,16 @@ svg path{
 
 @keyframes slide {
     from{
-        transform: translateX(0);
+        transform: translateX(-100%);
     }
     to{
-        transform: translateX(-100%);
+        transform: translateX(0);
     }
 }
 
 .sponsors{
     overflow: hidden;
     margin: 60px 100px;
-    padding: 15px 0;
     white-space: nowrap;
     position: relative;
     background-color: var(--background-color);
@@ -1045,7 +1110,7 @@ svg path{
 
 .logos-slide{
     display: inline-block;
-    animation: 20s slide infinite linear;
+    animation: 15s slide infinite linear;
     @media (max-width:500px) {
         animation: 10s slide infinite linear;
     }
@@ -1200,14 +1265,13 @@ form{
 
 form input, textarea{
     width: 100%;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 1px solid black;
+    border: none;
     outline: none;
     border-radius: 5px;
     background-color: var(--white);
     cursor: text;
+    box-shadow: 0 2px 4px;
+    margin: 2px;
 }
 
 #input-field{
@@ -1233,6 +1297,8 @@ form input, textarea{
     color: black;
     padding: 6px 0;
     border-radius: 20px;
+    cursor: default;
+    /* box-shadow: none; */
 }
 
 /*----------------JOIN--------------------*/

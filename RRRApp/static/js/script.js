@@ -339,34 +339,40 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var direction;
 
-    prev.addEventListener('click', function() {
-        if (direction === -1){
-            slider.appendChild(slider.firstElementChild);
-            direction = 1;
-        }
-        
-        carousel.style.justifyContent = 'flex-end';
-        slider.style.transform = 'translate(33%)';
-    });
-    
-    next.addEventListener('click', function() {
-        direction = -1;
-        carousel.style.justifyContent = 'flex-start';
-        slider.style.transform = 'translate(-33%)';
-    });
-
-    slider.addEventListener('transitionend', function() {
-        if (direction === -1){
-            slider.appendChild(slider.firstElementChild);
-        } else if (direction === 1){
-            slider.prepend(slider.lastElementChild);
-        }
-        
-
-        slider.style.transition = 'none';
-        slider.style.transform = 'translate(0)';
-        setTimeout(function() {
-            slider.style.transition = 'all 0.5s';
+    if(prev){
+        prev.addEventListener('click', function() {
+            if (direction === -1){
+                slider.appendChild(slider.firstElementChild);
+                direction = 1;
+            }
+            
+            carousel.style.justifyContent = 'flex-end';
+            slider.style.transform = 'translate(33%)';
         });
-    });
+    }
+    
+    if(next){
+        next.addEventListener('click', function() {
+            direction = -1;
+            carousel.style.justifyContent = 'flex-start';
+            slider.style.transform = 'translate(-33%)';
+        });     
+    }
+
+    if(slider){
+        slider.addEventListener('transitionend', function() {
+            if (direction === -1){
+                slider.appendChild(slider.firstElementChild);
+            } else if (direction === 1){
+                slider.prepend(slider.lastElementChild);
+            }
+            
+    
+            slider.style.transition = 'none';
+            slider.style.transform = 'translate(0)';
+            setTimeout(function() {
+                slider.style.transition = 'all 0.5s';
+            });
+        });
+    }
 });
