@@ -15,6 +15,7 @@
     --hover-color: #d3d3d3;
     --contactOrJoin: #d3d3d3;
     --arrowColor: #d3d3d3;
+    --logoBack: #d3d3d3;
 }
 :root.light-mode {
     --background-color:  #D3D3D3;
@@ -24,16 +25,18 @@
     --background-color-date: #CF291D; 
     --font-color: black;
     --arrowColor: #902c25;
+    --logoBack: #d3d3d3;
 }
 
 :root.dark-mode{
-    --background-color: rgba(0, 0, 0, 0.815);
+    --background-color: #474747;
     --background-color-header: #902c25;
     --background-color-about: #902c25;
     --background-color-event: #797979; 
     --background-color-date: #CF291D; 
     --font-color: #D3D3D3;
     --arrowColor: #222222;
+    --logoBack: #9c9c9c;
 }
 
 * {
@@ -271,6 +274,7 @@ main{
 .welcomeTitle {
     text-align: left; /* Change to left alignment */
     font-size: 70px;
+    font-family: 'Playfair Display SC', serif;
 }
 
 .welcomeTitleCont {
@@ -402,13 +406,14 @@ main{
     }
 }
 
-.sectionTitle{
+.sectionTitleHome{
     margin: 30px auto 10px auto;
     text-align: center;
+    font-family: 'Playfair Display SC', serif;
 }
 
 .about{
-    max-width: 90%;
+    max-width: 80%;
     margin: 0 auto;
     text-align: center;
     overflow-x: visible;
@@ -765,9 +770,9 @@ footer a{
 }
 
 .sectionTitle{
-    font-family:'Lucida Sans';
     margin: 30px auto 10px auto;
     text-align: center;
+    font-size: 35px;
 }
 
 .underline{
@@ -894,101 +899,134 @@ svg path{
 /*---------------------ENDO OF TEAM || START OF SPONSOR---------------*/
 .coverIMGSponsor {
     width: 100%;
-    height: 700px;
-    position: relative;
-    overflow-y: hidden;
-    display: flex; /* Use flexbox for side-by-side layout */
-    flex-direction: row;
-    @media (max-width: 768px) {
-        flex-direction: column; /* Stack vertically on small screens */
-    }
-}
-
-.sponsorPic {
-    flex: 1; /* Take 50% of the available width */
-    height: 100%;
-    background-color: #ccc; /* Just for visualization */
-    @media (max-width: 768px) {
-        flex: none; /* Reset flex property */
-        width: 100%; /* Take full width on small screens */
-        height: 50%;
+    height: 250px;
+    padding-bottom: 0px;
+    position: relative; 
+    overflow: visible;
+    /* margin-top: 75px; */
+    padding-top: 50px;
+    @media (max-width: 500px){
+        padding-top: 50px;
+        padding-bottom: 20px;
     }
 }
 
 .pageTitleSponsor {
-    flex: 1; /* Take 50% of the available width */
     height: 100%;
-    background-color: #f0f0f0; /* Just for visualization */
+    background-color: var(--background-color); /* Just for visualization */
     display: flex;
+    padding-top: 40px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    @media (max-width: 768px) {
-        flex: none; /* Reset flex property */
-        width: 100%; /* Take full width on small screens */
-        height: 50%;
-        order: -1;
-        padding-top: 40px;
-    }
+    overflow: visible;
 }
 
 .sponsorTitle {
+    margin-top: 40px;
     text-align: center; 
-    font-size: 70px;
+    font-size: 85px;
     margin-bottom: 10px;
+    overflow: visible;
+    font-family: 'Playfair Display SC', serif;
 }
 
 .sponsorTitleCont {
     text-align: center; 
     font-size: 30px;
     margin-top: -30px;
+    overflow: visible;
 }
 
 .thankyou,.howSponsor{
     margin: auto;
     text-align: center;
     padding: 20px;
-    max-width: 90%;
+    max-width: 75%;
     background-color: var(--background-color-about);
     color: var(--font-color);
     border-radius: 20px;
     font-size: 18px;
-    margin-bottom: 15px;
+    margin-bottom: 35px;
     margin-top: 15px;
     box-shadow: var(--shadow);
-    border-style: solid;
-    border-color: #222222;
-    border-width: 2px;
+    border: solid 2px #222222;
+}
+
+@keyframes slide {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
 }
 
 .sponsors{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
+    overflow: hidden;
+    margin: 60px 100px;
+    padding: 15px 0;
+    white-space: nowrap;
+    position: relative;
+    background-color: var(--background-color);
+    @media (max-width:500px) {
+        margin: 40px 0px;
+    }
 }
 
-.sponsor{
-    text-align: center;
-    margin: 20px;
-}
-
-.sponsorLogo{
-    margin: 10px auto;
-    padding: 10px;
-    width: 300px;
-    aspect-ratio: 16/9;
-    background-color: var(--imagePlaceholder);
-    border-radius: 70px;
-}
-
-.sponsorLogo a{
-    display: block;
-    width: 100%;
+.sponsors::before,
+.sponsors::after{
+    position: absolute;
+    top: 0;
     height: 100%;
+    width: 8%;
+    content: "";
+    z-index: 2;
+}
+
+.sponsors::before{  
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), var(--background-color));
+}
+
+.sponsors::after{  
+    right: 0;
+    background: linear-gradient(to right, rgba(255,255,255,0), var(--background-color));
+}
+
+.sponsors:hover .logos-slide{
+    animation-play-state: paused;
+    @media (max-width:500px) {
+        animation-play-state: running;
+    }
+}
+
+.logos-slide{
+    display: inline-block;
+    animation: 20s slide infinite linear;
+    @media (max-width:500px) {
+        animation: 10s slide infinite linear;
+    }
+}
+
+.logos-slide img{
+    margin: 15px 25px;
+    cursor: default;
+    @media (max-width:500px) {
+        height: 80px;
+        margin: 0 5px;
+    }
+}
+
+.logos-slide a{
+    text-decoration: none;
+}
+
+.logoPic{
+    background-color: var(--logoBack);
+    border-radius: 10px;
+    padding:10px 15px;
+    /* box-shadow: 0 0 1px 4px var(--logoBack); */
 }
 
 /*---------------------------------CONTACT US----------------------*/
