@@ -299,7 +299,7 @@ main{
 
 .welcomeTitleCont {
     text-align: left; 
-    height: auto;
+    height: 75px;
     font-size: 30px;
     margin: 0;
     @media (max-width: 820px) {
@@ -933,13 +933,14 @@ footer a{
 .member{
     text-align: center;
     width: 300px;
-    height: 555px;
+    height: 535px;
     opacity: 0; /* Start with opacity 0 */
     transition: opacity 0.5s ease; /* Smooth transition for opacity */
     background-color: var(--background-color-about);
     color: var(--font-color);
     border-radius: 20px;
     margin: 10px;
+    overflow: hidden;
     box-shadow: var(--shadow);
 }
 
@@ -963,15 +964,18 @@ footer a{
         height: auto;
         display: flex;
         text-align: center;
+        align-items: center;
         padding-top: 120px;
-        margin: 0px;
+        margin: auto;
         max-width: 95%;
+        margin-bottom: -30px;
     }
     header.team{
         background-color: var(--background-color-header);
     }
     .mobileFont{
-        font-family:'Lucida Sans';
+        color: var(--font-color);
+        text-shadow: 0.75px 0.75px var(--dark-red);
     }
     .parallax-container2{
         display: none;
