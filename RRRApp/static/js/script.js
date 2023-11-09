@@ -379,12 +379,43 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-//-------------------------Google Sheet----------------
-var form = document.getElementById('sheetdb-form');
-form.addEventListener("submit", e=> {
-    e.preventDefault();
-    fetch(form.action,{
-        method: "POST",
-        body: new FormData(document.getElementById("sheetdb-form")),
-    }).then(response => response.json())
+//-------------------------Success Notification----------------
+function GetURLParameter(sParam) {
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++) 
+    {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam) 
+        {
+            return sParameterName[1];
+        }
+    }
+}
+
+function showSent(send){
+    send.style.display = 'block';
+    send.parentElement.scrollIntoView({behavior:'smooth'});
+}
+
+document.addEventListener("DOMContentLoaded", function(){
+    var successParam = GetURLParameter('success')
+    if (successParam){
+        var message;
+        if(successParam ==1 ){
+            message = '#sent';
+        }else{
+            message = '#fail';
+        }
+
+        const send = document.querySelector(message);
+        showSent(send);
+    }
 });
+
+//-----------------loading image-----------------
+function showLoading(){
+    const loader = document.querySelector('.loader');
+    loader.classList.add('load');
+    loader.style.display = 'block';
+}

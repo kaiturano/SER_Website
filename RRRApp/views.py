@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from .functions.email import *
+from .functions.sheets import insertRow
 
 TEMPLATE_DIRS = (
     'os.path.join(BASE_DIR, "templates"),'
@@ -17,7 +19,47 @@ def sponsor(request):
     return render(request, "sponsor.html",)
 
 def contact(request):
-    return render(request, "contact.html",)
+    if request.method == 'GET':
+        return render(request, "contact.html",)
+    else:
+        name = request.POST.get('Name')
+        email = request.POST.get('Email')
+        subject= request.POST.get('Subject')
+        message= request.POST.get('Message')
+
+        try:
+            message = contactFormat(name, email, subject, message)
+            emailMessage("SER Contact Form", message, 'ser@website.admin', "kaiturano@gmail.com")
+            # print(message)
+            success = 1
+        except Exception as e:
+            print(e)
+            success = 0
+        
+        return redirect(f"/contact/?success={success}")
 
 def join(request):
-    return render(request, "join.html",)
+    if request.method == 'GET':
+        return render(request, "join.html",)
+    else:
+        firstName = request.POST.get('FirstName')
+        lastName = request.POST.get('LastName')
+        email = request.POST.get('Email')
+        phoneNumber= request.POST.get('PhoneNumber')
+        major= request.POST.get('Major')
+        graduation = request.POST.get('Graduation')
+        dob = request.POST.get('DOB')
+        city = request.POST.get('City')
+        shirtSize = request.POST.get('ShirtSize')
+
+        try:
+            insertRow(firstName,lastName, email, phoneNumber, major, graduation, dob, city, shirtSize)
+            message = formatMessage(firstName, lastName,)
+            emailMessage("New Member Request", message, 'ser@website.admin', "kaiturano@gmail.com")
+            # print(message)
+            success = 1
+        except Exception as e:
+            print(e)
+            success = 0
+        
+        return redirect(f"/join/?success={success}")

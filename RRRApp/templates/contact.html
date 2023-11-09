@@ -24,7 +24,7 @@
             <h3 class="contactTitleCont">Reach out and we will get back to you!</h3>
         </div>
         <div class="hero">
-            <form action="" method="post" class="contactForm">
+            <form action="" method="post" class="contactForm" onsubmit="showLoading()">
                 {% csrf_token %}
                 <div class="mail-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-telegram" viewBox="0 0 16 16">
@@ -58,6 +58,17 @@
                 </div>
                 <div class="submitBtn">
                     <input type="submit" value="Submit" class="send-btn">
+                </div>
+                <div id="successMessage">
+                    <div class="message" id="sent">
+                        <h4>Your submission was a success</h4>
+                    </div>
+                    <div class="message" id="fail">
+                        <h4>You submission failed.</h4>
+                    </div>
+                </div>
+                <div class="loader">
+                    <img src="../static/logos/rocket.png" alt="Rocket"  class="imageLoad">
                 </div>
             </form>
         </div>

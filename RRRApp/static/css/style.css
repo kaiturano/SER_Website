@@ -299,7 +299,7 @@ main{
 
 .welcomeTitleCont {
     text-align: left; 
-    height: 80px;
+    height: auto;
     font-size: 30px;
     margin: 0;
     @media (max-width: 820px) {
@@ -310,7 +310,7 @@ main{
 .welcome_subtext{
     max-width: 80%;
     text-align: center;
-    margin-top: 5px;
+    /* margin-top: 5px; */
     font-size: 20px;
 }
 
@@ -407,7 +407,7 @@ main{
 .sectionTitleHome{
     margin: 30px auto 10px auto;
     text-align: center;
-    font-family: 'Playfair Display SC', serif;
+    /* font-family: 'Playfair Display SC', serif; */
 }
 
 .about{
@@ -1214,12 +1214,13 @@ svg path{
 
 .hero{
     flex: 1;
-    padding-top: 35px;
+    padding-top: 80px;
     width: 100%;
-    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    margin-bottom: 15px;
     @media (max-width: 768px) {
         flex: 1; /* Reset flex property */
         max-width: 100%; /* Take full width on small screens */
@@ -1302,6 +1303,36 @@ form input, textarea{
     transform: ease 0.2s;
 }
 
+.message{
+    display: none;
+    text-align: center;
+}   
+
+.loader{
+    display: none;
+    width: 60px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+@keyframes spinning {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.load{
+    animation: spinning 4s infinite linear;
+}
+
+.imageLoad{
+    padding-right: 20px;
+    width: 35px;
+}
+
 /*----------------JOIN--------------------*/
 .coverIMGJoin {
     width: 100%;
@@ -1339,7 +1370,6 @@ form input, textarea{
     font-size: 18px;
     width: 700px;
     margin-top: 40px;
-    height: 520px;
     margin-right: 20px;
     margin-left: 20px;
     padding: 30px;

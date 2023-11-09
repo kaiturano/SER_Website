@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import sys
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -132,3 +133,19 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Email stuff here
+if 'test' in sys.argv:
+    EMAIL_BACKEND = 'django.core.mail.backends.locmem.EmailBackend'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp-relay.brevo.com'  # Replace with the actual SMTP server address
+EMAIL_PORT = 587  # Use the appropriate port number
+EMAIL_USE_TLS = True  # Use TLS encryption if supported
+EMAIL_HOST_USER = 'kaiturano@gmail.com'  # Your email address
+
+if DEBUG:
+    from .secret import EMAIL_HOST_PASSWORD
+else:
+    # EMAIL_HOST_PASSWORD = os.environ["EMAIL_HOST_PASSWORD"]
+    from .secret import EMAIL_HOST_PASSWORD
