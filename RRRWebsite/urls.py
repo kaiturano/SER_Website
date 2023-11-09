@@ -28,4 +28,7 @@ urlpatterns = [
     path('sponsors/',views.sponsor, name='sponsor'),
     path('contact/',views.contact, name='contact'),
     path('join/',views.join, name='join'),
+    path('privacy/',views.privacy, name='privacy'),
+    path('terms/',views.terms, name='terms'),
+
 ]

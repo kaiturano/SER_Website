@@ -4,6 +4,8 @@ from django.views.decorators.csrf import csrf_exempt
 from .functions.email import *
 from .functions.sheets import insertRow
 
+mainEmail = "spaceexplorationraiders@gmail.com"
+
 TEMPLATE_DIRS = (
     'os.path.join(BASE_DIR, "templates"),'
 )
@@ -29,7 +31,7 @@ def contact(request):
 
         try:
             message = contactFormat(name, email, subject, message)
-            emailMessage("SER Contact Form", message, 'ser@website.admin', "kaiturano@gmail.com")
+            emailMessage("SER Contact Form", message, 'ser@website.admin', mainEmail)
             # print(message)
             success = 1
         except Exception as e:
@@ -55,7 +57,7 @@ def join(request):
         try:
             insertRow(firstName,lastName, email, phoneNumber, major, graduation, dob, city, shirtSize)
             message = formatMessage(firstName, lastName,)
-            emailMessage("New Member Request", message, 'ser@website.admin', "kaiturano@gmail.com")
+            emailMessage("New Member Request: ",firstName, lastName, message, 'ser@website.admin', mainEmail)
             # print(message)
             success = 1
         except Exception as e:
@@ -63,3 +65,10 @@ def join(request):
             success = 0
         
         return redirect(f"/join/?success={success}")
+    
+
+def privacy(request):
+    return render(request, "privacy.html",)
+
+def terms(request):
+    return render(request, "terms.html",)

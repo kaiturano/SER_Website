@@ -1,15 +1,10 @@
 from django.core.mail import send_mail
 from datetime import datetime
 
-def emailMessage(subject, message, fromEmail, toEmail):
-    '''
-    Used to take the inputs and send an email to our email.
-        - currently using 'redraiderracingcode@outlook.com' for testing.\n
-    Returns None.
-    '''
+def emailMessage(subject, firstName, lastName, message, fromEmail, toEmail):
     if message:
         send_mail(
-            subject,
+            subject + firstName + lastName,
             message,
             fromEmail, # Send email from
             [toEmail], # Send email to

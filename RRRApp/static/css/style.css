@@ -732,6 +732,11 @@ footer a{
 .social-button {
     display: inline-block;
     position: relative;
+    cursor: default;
+}
+
+#foot{
+    cursor: default;
 }
 /*------------Side Container---------------------*/
 .sideMenu {
@@ -813,8 +818,38 @@ footer a{
     transition-delay: 200ms;
     transform: scale(1) rotate(360deg);
 }
-/*-----------------------------END OF HOME PAGE || START OF TEAM-----------------------*/
+/*-----------------Terms--------------------*/
+.headerBackground {
+    width:100%;
+    height: 120px;
+}
 
+.generalCover {
+    width:100%;
+    height: auto;
+    
+    z-index: 88;
+    overflow: visible;
+}
+
+.generalCover h1{
+    color: var(--font-color);
+}
+
+.generalSection li{
+    margin: 10px auto;
+}
+
+.generalSection{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.generalSection li p{
+    padding: 0 20px;
+}
+/*-----------------------------END OF HOME PAGE || START OF TEAM-----------------------*/
 .coverIMGTeam {
     height: 100px;
     text-align: center;
@@ -1057,6 +1092,10 @@ svg path{
     border: solid 2px #222222;
 }
 
+.pdf{
+    cursor: default;
+}
+
 @keyframes slide {
     from{
         transform: translateX(-100%);
@@ -1071,6 +1110,7 @@ svg path{
     margin: 60px 100px;
     white-space: nowrap;
     position: relative;
+    
     background-color: var(--background-color);
     @media (max-width:500px) {
         margin: 40px 0px;
@@ -1106,9 +1146,9 @@ svg path{
 
 .logos-slide{
     display: inline-block;
-    animation: 15s slide infinite linear;
+    animation: 20s slide infinite linear;
     @media (max-width:500px) {
-        animation: 10s slide infinite linear;
+        animation: 12s slide infinite linear;
     }
 }
 
@@ -1128,8 +1168,13 @@ svg path{
 .logoPic{
     background-color: var(--logoBack);
     border-radius: 10px;
-    padding:10px 15px;
+    padding:20px 15px;
     /* box-shadow: 0 0 1px 4px var(--logoBack); */
+}
+
+.hanson{
+    border-radius: 20px;
+    padding: 10px 15px;
 }
 
 /*---------------------------------CONTACT US----------------------*/
