@@ -16,6 +16,7 @@
     --background-color-date: #CF291D; 
     --font-color: black;
     --arrowColor: #902c25;
+    --link-color: rgb(25, 25, 199);
 }
 :root.light-mode {
     --background-color:  #D3D3D3;
@@ -26,6 +27,7 @@
     --font-color: black;
     --arrowColor: #902c25;
     --logoBack: #d3d3d3;
+    --link-color: rgb(25, 25, 199);
 }
 
 :root.dark-mode{
@@ -37,6 +39,13 @@
     --font-color: #D3D3D3;
     --arrowColor: #222222;
     --logoBack: #9c9c9c;
+    --link-color: rgb(45, 205, 64);
+}
+
+@font-face {
+    font-family: 'Playfair Display SC';
+    src: url("../fonts/PlayfairDisplaySC-Italic.ttf") format("opentype");
+    font-display: swap;
 }
 
 * {
@@ -976,6 +985,7 @@ footer a{
     .mobileFont{
         color: var(--font-color);
         text-shadow: 0.75px 0.75px var(--dark-red);
+        /* font-family: 'Playfair Display SC', serif; */
     }
     .parallax-container2{
         display: none;
@@ -1043,14 +1053,12 @@ svg path{
 /*---------------------ENDO OF TEAM || START OF SPONSOR---------------*/
 .coverIMGSponsor {
     width: 100%;
-    height: 250px;
     padding-bottom: 0px;
     position: relative; 
     overflow: visible;
     padding-top: 50px;
     @media (max-width: 500px){
-        padding-top: 50px;
-        padding-bottom: 20px;
+        padding-top: 20px;
     }
 }
 
@@ -1072,6 +1080,9 @@ svg path{
     margin-bottom: 10px;
     overflow: visible;
     font-family: 'Playfair Display SC', serif;
+    @media (max-width:500px) {
+        padding-top: 5px;
+    }
 }
 
 .sponsorTitleCont {
@@ -1079,6 +1090,9 @@ svg path{
     font-size: 30px;
     margin-top: -30px;
     overflow: visible;
+    max-width: 500px;
+    width: 92%;
+    /* margin-bottom: 5px; */
 }
 
 .thankyou,.howSponsor{
@@ -1098,6 +1112,7 @@ svg path{
 
 .pdf{
     cursor: default;
+    color: var(--link-color);
 }
 
 @keyframes slide {
@@ -1114,10 +1129,9 @@ svg path{
     margin: 60px 100px;
     white-space: nowrap;
     position: relative;
-    
     background-color: var(--background-color);
     @media (max-width:500px) {
-        margin: 40px 0px;
+        margin: 20px 0px 40px 0px;
     }
 }
 
@@ -1152,7 +1166,7 @@ svg path{
     display: inline-block;
     animation: 20s slide infinite linear;
     @media (max-width:500px) {
-        animation: 8s slide infinite linear;
+        animation: 12s slide infinite linear;
     }
 }
 
@@ -1173,12 +1187,11 @@ svg path{
     background-color: var(--logoBack);
     border-radius: 10px;
     padding:20px 15px;
-    /* box-shadow: 0 0 1px 4px var(--logoBack); */
 }
 
 .hanson{
-    border-radius: 20px;
-    padding: 10px 15px;
+    border-radius: 10px;
+
 }
 
 /*---------------------------------CONTACT US----------------------*/
