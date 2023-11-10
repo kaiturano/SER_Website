@@ -22,13 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 if DEBUG:
     from .secret import SECRET_KEY
 else:
-    from .secret import SECRET_KEY
-    # SECRET_KEY = os.environ["SECRET_KEY"]
+    SECRET_KEY = os.environ["SECRET_KEY"]
 
 ALLOWED_HOSTS = ["127.0.0.1", '*']
 
@@ -142,10 +141,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp-relay.brevo.com'  # Replace with the actual SMTP server address
 EMAIL_PORT = 587  # Use the appropriate port number
 EMAIL_USE_TLS = True  # Use TLS encryption if supported
-EMAIL_HOST_USER = 'kaiturano@gmail.com'  # Your email address
+EMAIL_HOST_USER = os.environ["EMAIL_HOST_USER"]  # Your email address
 
 if DEBUG:
     from .secret import EMAIL_HOST_PASSWORD
 else:
-    # EMAIL_HOST_PASSWORD = os.environ["EMAIL_HOST_PASSWORD"]
-    from .secret import EMAIL_HOST_PASSWORD
+    EMAIL_HOST_PASSWORD = os.environ["EMAIL_HOST_PASSWORD"]
+
