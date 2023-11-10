@@ -1171,6 +1171,8 @@ svg path{
 .logos-slide img{
     margin: 15px 25px;
     cursor: default;
+    padding: 8px;
+    border-radius: 20px;
     @media (max-width:500px) {
         height: 80px;
         margin: 0 5px;
@@ -1184,7 +1186,7 @@ svg path{
 .logoPic{
     background-color: var(--logoBack);
     border-radius: 10px;
-    padding:20px 15px;
+    /* padding:20px 15px;  */
 }
 
 /*---------------------------------CONTACT US----------------------*/
