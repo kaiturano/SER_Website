@@ -662,7 +662,6 @@ main{
     border: solid 3px black;
     justify-content: center;
     box-shadow: var(--shadow);
-    height: 225px;
     margin-top: 32px;
     color: black;
 }
@@ -689,7 +688,6 @@ main{
 .newsLink{
     flex: 1;
     background-color: var(--white);
-    
     overflow: hidden;
 }
 
@@ -1187,11 +1185,6 @@ svg path{
     background-color: var(--logoBack);
     border-radius: 10px;
     padding:20px 15px;
-}
-
-.hanson{
-    border-radius: 10px;
-
 }
 
 /*---------------------------------CONTACT US----------------------*/
