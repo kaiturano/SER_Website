@@ -1164,7 +1164,7 @@ svg path{
     display: inline-block;
     animation: 20s slide infinite linear;
     @media (max-width:500px) {
-        animation: 9s slide infinite linear;
+        animation: 15s slide infinite linear;
     }
 }
 
