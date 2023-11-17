@@ -13,18 +13,6 @@ def emailMessage(subject, firstName, lastName, message, fromEmail, toEmail):
     else:
         raise Exception
 
-def emailMessageContact(subject, name, message, fromEmail, toEmail):
-    if message:
-        send_mail(
-            subject + name,
-            message,
-            fromEmail, # Send email from
-            [toEmail], # Send email to
-            # fail_silently=False, # We don't want it to fail silently that way it raises an error
-        )
-    else:
-        raise Exception
-
 def formatMessage(FirstName, LastName):
     '''
     Used to format the message how ever you want.\n
@@ -56,14 +44,14 @@ def emailDate():
     return day_of_week, date
 
     
-def contactFormat(Name, Email,Subject, Message):
-    if Name and Email and Message:
+def contactFormat(FirstName, LastNaeme, Email,Subject, Message):
+    if FirstName and LastNaeme and Email and Message:
         day_of_week, date = emailDate()
         email_link = emailLink(Email, Subject)
 
         
         fullMessage = (
-            f'This message is from {Name} on {day_of_week}, {date} at '  # Date and time information
+            f'This message is from {FirstName} {LastNaeme} on {day_of_week}, {date} at '  # Date and time information
             f'{datetime.now().strftime("%I")}:{datetime.now().strftime("%M")} '  # Hour and minute
             f'{datetime.now().strftime("%p")}:\n\n{Message}\n\n\To respond,'  # AM or PM and message
             f'email back at {email_link}'

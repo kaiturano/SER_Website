@@ -24,14 +24,15 @@ def contact(request):
     if request.method == 'GET':
         return render(request, "contact.html",)
     else:
-        name = request.POST.get('Name')
+        firstName = request.POST.get('FirstName')
+        lastName = request.POST.get('LastName')
         email = request.POST.get('Email')
         subject= request.POST.get('Subject')
         message= request.POST.get('Message')
 
         try:
-            message = contactFormat(name, email, subject, message)
-            emailMessageContact("SER Contact Form: ", name, message, 'ser@website.admin', mainEmail)
+            message = contactFormat(firstName, lastName, email, subject, message)
+            emailMessage("SER Contact Form: ", firstName, lastName, message, 'ser@website.admin', mainEmail)
             # print(message)
             success = 1
         except Exception as e:
