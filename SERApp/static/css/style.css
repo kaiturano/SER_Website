@@ -1090,7 +1090,6 @@ svg path{
     overflow: visible;
     max-width: 500px;
     width: 92%;
-    /* margin-bottom: 5px; */
 }
 
 .thankyou,.howSponsor{
@@ -1129,7 +1128,25 @@ svg path{
     position: relative;
     background-color: var(--background-color);
     @media (max-width:500px) {
-        margin: 20px 0px 40px 0px;
+        display: none;
+    }
+}
+
+.mobileSponsor{
+    display: none;
+}
+
+@media (max-width:500px){
+    .mobileSponsor a{
+        display: grid;
+        justify-items: center;
+        align-content: space-evenly;
+        align-items: center;
+        margin: 15px auto;
+    }
+    .mobileSponsor {
+        text-align: center;
+        margin-bottom: 40px;
     }
 }
 
@@ -1155,16 +1172,13 @@ svg path{
 
 .sponsors:hover .logos-slide{
     animation-play-state: paused;
-    @media (max-width:500px) {
-        animation-play-state: running;
-    }
 }
 
 .logos-slide{
     display: inline-block;
     animation: 20s slide infinite linear;
     @media (max-width:500px) {
-        animation: 15s slide infinite linear;
+        animation: none;
     }
 }
 
@@ -1186,7 +1200,6 @@ svg path{
 .logoPic{
     background-color: var(--logoBack);
     border-radius: 10px;
-    /* padding:20px 15px;  */
 }
 
 /*---------------------------------CONTACT US----------------------*/
