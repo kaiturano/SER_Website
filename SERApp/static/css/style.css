@@ -1145,7 +1145,7 @@ svg path{
         margin: 15px auto;
     }
     .mobileSponsor {
-        display: grid;
+        display: grid; /*delete this*/
         text-align: center;
         margin-bottom: 40px;
     }
