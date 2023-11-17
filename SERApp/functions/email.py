@@ -13,6 +13,18 @@ def emailMessage(subject, firstName, lastName, message, fromEmail, toEmail):
     else:
         raise Exception
 
+def emailMessageContact(subject, name, message, fromEmail, toEmail):
+    if message:
+        send_mail(
+            subject + name,
+            message,
+            fromEmail, # Send email from
+            [toEmail], # Send email to
+            # fail_silently=False, # We don't want it to fail silently that way it raises an error
+        )
+    else:
+        raise Exception
+
 def formatMessage(FirstName, LastName):
     '''
     Used to format the message how ever you want.\n

@@ -31,7 +31,7 @@ def contact(request):
 
         try:
             message = contactFormat(name, email, subject, message)
-            emailMessage("SER Contact Form", message, 'ser@website.admin', mainEmail)
+            emailMessageContact("SER Contact Form: ", name, message, 'ser@website.admin', mainEmail)
             # print(message)
             success = 1
         except Exception as e:
