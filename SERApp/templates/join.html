@@ -23,6 +23,7 @@
             <h1 class="contactTitle">Interested in SER?</h1>
             <h3 class="contactTitleCont">Request to join by filling out the form!</h3>
         </div>
+        <!--TODO Fix email notifications-->
         <div class="hero">
             <form action="{% url 'join' %}" method="post" class="joinForm" onsubmit="showLoading()"> 
                 {% csrf_token %}

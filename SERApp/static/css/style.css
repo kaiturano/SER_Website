@@ -1269,7 +1269,7 @@ svg path{
 
 .reach-out {
     flex: 1; /* Take 50% of the available width */
-    /* height: 100vh; */
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
