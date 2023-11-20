@@ -1283,6 +1283,10 @@ svg path{
     }
 }
 
+.contactForm{
+    margin-top: 40px;
+}
+
 .hero{
     flex: 1;
     padding-top: 80px;
