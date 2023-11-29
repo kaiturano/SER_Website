@@ -1346,6 +1346,10 @@ form input, textarea{
     margin: 2px;
 }
 
+textarea{
+    resize: none;
+}
+
 #input-field{
     padding-bottom: 20px;
     display: flex;

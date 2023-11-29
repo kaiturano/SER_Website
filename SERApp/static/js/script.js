@@ -419,3 +419,12 @@ function showLoading(){
     loader.classList.add('load');
     loader.style.display = 'block';
 }
+
+//---------- Function to clean the input to protect against code injection
+function sanitizeInput(inputField) {
+    const inputValue = inputField.value;
+    const sanitizedValue = DOMPurify.sanitize(inputValue, { ALLOWED_TAGS: ['p', 'br'] });
+
+    const displayValue = sanitizedValue.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+    inputField.value = displayValue;
+}
