@@ -14,17 +14,17 @@ TEMPLATE_DIRS = (
 
 #----------------Pages----------------
 def index(request):
-    return render(request, "index.html",{"key": ANALYTICS},{"key": ANALYTICS_CODE},)
+    return render(request, "index.html",{"key": ANALYTICS, "key2": ANALYTICS_CODE},)
 
 def team(request):
-    return render(request, "team.html",{"key": ANALYTICS},{"key": ANALYTICS_CODE},)
+    return render(request, "team.html",{"key": ANALYTICS, "key2": ANALYTICS_CODE},)
 
 def sponsor(request):
-    return render(request, "sponsor.html",{"key": ANALYTICS},{"key": ANALYTICS_CODE},)
+    return render(request, "sponsor.html",{"key": ANALYTICS, "key2": ANALYTICS_CODE},)
 
 def contact(request):
     if request.method == 'GET':
-        return render(request, "contact.html",{"key": ANALYTICS},{"key": ANALYTICS_CODE},)
+        return render(request, "contact.html",{"key": ANALYTICS, "key2": ANALYTICS_CODE},)
     else:
         firstName = request.POST.get('FirstName')
         lastName = request.POST.get('LastName')
@@ -45,7 +45,7 @@ def contact(request):
 
 def join(request):
     if request.method == 'GET':
-        return render(request, "join.html",{"key": ANALYTICS},{"key": ANALYTICS_CODE},)
+        return render(request, "join.html",{"key": ANALYTICS, "key2": ANALYTICS_CODE},)
     else:
         firstName = request.POST.get('FirstName')
         lastName = request.POST.get('LastName')
@@ -71,7 +71,7 @@ def join(request):
     
 
 def privacy(request):
-    return render(request, "privacy.html",{"key": ANALYTICS},{"key": ANALYTICS_CODE},)
+    return render(request, "privacy.html",{"key": ANALYTICS, "key2": ANALYTICS_CODE},)
 
 def terms(request):
-    return render(request, "terms.html",{"key": ANALYTICS},{"key": ANALYTICS_CODE},)
+    return render(request, "terms.html",{"key": ANALYTICS, "key2": ANALYTICS_CODE},)
