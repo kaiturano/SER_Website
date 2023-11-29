@@ -3,6 +3,8 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from .functions.email import *
 from .functions.sheets import insertRow
+from .appsecret import ANALYTICS
+from .appsecret import ANALYTICS_CODE
 
 mainEmail = "spaceexplorationraiders@gmail.com"
 
@@ -12,17 +14,17 @@ TEMPLATE_DIRS = (
 
 #----------------Pages----------------
 def index(request):
-    return render(request, "index.html",)
+    return render(request, "index.html",{"key": ANALYTICS},{"key": ANALYTICS_CODE},)
 
 def team(request):
-    return render(request, "team.html",)
+    return render(request, "team.html",{"key": ANALYTICS},{"key": ANALYTICS_CODE},)
 
 def sponsor(request):
-    return render(request, "sponsor.html",)
+    return render(request, "sponsor.html",{"key": ANALYTICS},{"key": ANALYTICS_CODE},)
 
 def contact(request):
     if request.method == 'GET':
-        return render(request, "contact.html",)
+        return render(request, "contact.html",{"key": ANALYTICS},{"key": ANALYTICS_CODE},)
     else:
         firstName = request.POST.get('FirstName')
         lastName = request.POST.get('LastName')
@@ -43,7 +45,7 @@ def contact(request):
 
 def join(request):
     if request.method == 'GET':
-        return render(request, "join.html",)
+        return render(request, "join.html",{"key": ANALYTICS},{"key": ANALYTICS_CODE},)
     else:
         firstName = request.POST.get('FirstName')
         lastName = request.POST.get('LastName')
@@ -69,7 +71,7 @@ def join(request):
     
 
 def privacy(request):
-    return render(request, "privacy.html",)
+    return render(request, "privacy.html",{"key": ANALYTICS},{"key": ANALYTICS_CODE},)
 
 def terms(request):
-    return render(request, "terms.html",)
+    return render(request, "terms.html",{"key": ANALYTICS},{"key": ANALYTICS_CODE},)
