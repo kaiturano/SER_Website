@@ -9,7 +9,7 @@ Welcome to the Space Exploration Raiders' official website project! Our website 
 - **Team Members:** Users can view all executive members, senior design students, and assistants.
 - **Sponsors:** Users can view all sponsors as well as find information on how to sponsor.
 - **Contact Form** A contact form in which users will fill out table and the information will be sent to the executives via email.
-- **Join Form:** A form in which users can request to join the club. Upon completion, their information will be stored in google sheets and the exeuctives will recieve and email.
+- **Join Form:** A form in which users can request to join the club. Upon completion, their information will be stored in google sheets via API and the exeuctives will recieve and email.
 
 ## Dependencies
 
